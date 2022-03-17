@@ -1,4 +1,5 @@
 import React from "react";
+import './App.css';
 import Button from "./components/Button/Button";
 import Card from "./components/Card/Card";
 
@@ -11,7 +12,6 @@ const url = data.articles[0].url;
 const urlToImage = data.articles[0].urlToImage;
 const publishedAt = data.articles[0].publishedAt;
 const content = data.articles[0].content;
-
 
 function App() {
 

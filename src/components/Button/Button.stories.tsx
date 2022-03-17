@@ -1,7 +1,5 @@
 import React from "react";
-
 import { ComponentMeta, ComponentStory } from "@storybook/react";
-
 import Button from "./Button";
 
 export default {
@@ -20,4 +18,4 @@ export const secondery = Template.bind({});
 secondery.args = { className: "secondary" };
 
 export const textButton = Template.bind({});
-textButton.args = { className: "textButton" };
+textButton.args = { className: "textButton"};

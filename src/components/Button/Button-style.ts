@@ -1,21 +1,11 @@
 import styled from "styled-components";
-
-const colors ={
-  primaryBtn: '#0058b9',
-  primaryText: '#ffffff',
-  secondaryBtn: '#D9DBE9',
-  secondaryText: '#5A5A89',
-  textButtonyBtn: '#FFFFFF',
-  textButtonText: '#5A5A89'
-}
+import { colors } from "../../Utils/Constances";
 
 export const StyledButton = styled.button`
   width: 226px;
   height: 36px;
   border: none;
   border-radius: 20px;
-  justify-content: center;
-  align-items: center;
 
   &.primary {
     background: ${colors.primaryBtn};

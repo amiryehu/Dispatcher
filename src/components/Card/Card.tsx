@@ -1,9 +1,10 @@
 import React from "react";
 import Button from "../Button/Button";
+import { buttonType } from "../../Utils/Constances";
 import {  CardWrapper,  CardImg,  ArticleHeader,  Tags,  ArticleBody,  ArticleContent,  CardContent, ButtonContainer} from "./Card-style";
-import { formattingDate } from "../../assets/DateConvert";
+import { formattingDate } from "../../Utils/DateConvert";
 
-type props = {
+type ICard = {
   name: string;
   title: string;
   description: string;
@@ -14,7 +15,9 @@ type props = {
 
 const btnText = "NAVIGATE TO DISPATCH";
 
-const Card = ({  urlToImage,  publishedAt,  title,  name,  description /*tags?*/,}: props) => {
+const Card = (props: ICard) => {
+
+  const {urlToImage, publishedAt, title, name, description /*tags?*/} = props;
   return (
     <CardWrapper>
 
@@ -33,7 +36,7 @@ const Card = ({  urlToImage,  publishedAt,  title,  name,  description /*tags?*/
           </ArticleBody>
         </div>
         <ButtonContainer>
-          <Button className="primary" btnText={btnText}></Button>
+          <Button className={buttonType.primary} btnText={btnText}></Button>
         </ButtonContainer>
       </CardContent>
 

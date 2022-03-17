@@ -1,14 +1,15 @@
 import React from "react";
-// import styled from "styled-components";
-// import ts from "typescript";
 import { StyledButton } from "./Button-style";
 
-interface props extends React.HTMLAttributes<HTMLButtonElement> {
-  btnText:string
+interface IButton {
+  btnText: string,
+  className: string,
+  // arrowIconIsShow: boolean
  }
 
-const Button = ({...args}: props) => {
-  return <StyledButton className={args.className}>{args.btnText}</StyledButton>;
+const Button = (props: IButton) => {
+  const {className, btnText} = props;
+  return <StyledButton className={className}>{btnText}</StyledButton>;
 };
 
 export default Button;

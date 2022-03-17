@@ -1,23 +1,20 @@
 import styled from "styled-components";
-const cardrRadius = "14px";
+import { colors, cardrRadius, articleTextColors } from "../../Utils/Constances";
 
 export const CardWrapper = styled.div`
   display: flex;
   width: 51%;
   height: 242px;
   border-radius: ${cardrRadius};
-  background: #ffffff;
+  background: ${colors.white};
   align-items: center;
-  font-family: "Roboto";
   font-style: "normal";
 `;
 
 export const CardImg = styled.img`
   height: 100%;
   width: 24.7%;
-  padding: 0px;
   border-radius: ${cardrRadius} 0px 0px ${cardrRadius};
-  align-content: space-between;
 `;
 
 export const CardContent = styled.div`
@@ -26,10 +23,6 @@ export const CardContent = styled.div`
     flex-direction: column;
     justify-content: space-between;
     margin-left: 2%;
-
-    &:last-child{
-        float: right;
-    }
 `;
 
 export const ArticleHeader = styled.div`
@@ -45,24 +38,23 @@ export const ArticleBody = styled.div`
   display: flex;
   flex-direction: column;
   width: 95.3%;
-  padding: 0px;
 `;
 
 export const ArticleContent = styled.div`
-  margin-top: 2.5%;
+  margin-top: 3%;
   &.title {
-    color: #14142b;
-    font-size: 18px;
+    color: ${articleTextColors.title};
+    font-size: 1.15rem;
   }
 
   &.name {
     color: rgba(90, 90, 137, 0.5);
-    font-size: 14px;
+    font-size: 0.85rem;
   }
 
   &.description {
-    color: #5a5a89;
-    font-size: 14px;
+    color: ${articleTextColors.description};
+    font-size: 0.85rem;
     overflow: hidden;
     text-overflow: ellipsis;
     display: -webkit-box;
@@ -79,9 +71,11 @@ export const ButtonContainer = styled.div`
 `;
 
 export const Tags = styled.div`
-  color: #5a5a89;
-  background: #f3f3ff;
+  color: ${articleTextColors.tagsText};
+  background: ${articleTextColors.tegsBackground};
+  height: 1em;
   padding: 2px 8px;
   border-radius: ${cardrRadius};
+  display: flex;
   align-items: center;
 `;
