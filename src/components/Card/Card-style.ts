@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { colors, cardrRadius, articleTextColors } from "../../Utils/Constances";
+import { colors, cardrRadius } from "../../Utils/Constances";
 
 export const CardWrapper = styled.div`
   display: flex;
@@ -43,7 +43,7 @@ export const ArticleBody = styled.div`
 export const ArticleContent = styled.div`
   margin-top: 3%;
   &.title {
-    color: ${articleTextColors.title};
+    color: ${colors.black};
     font-size: 1.15rem;
   }
 
@@ -53,7 +53,7 @@ export const ArticleContent = styled.div`
   }
 
   &.description {
-    color: ${articleTextColors.description};
+    color: ${colors.darkGray};
     font-size: 0.85rem;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -71,8 +71,8 @@ export const ButtonContainer = styled.div`
 `;
 
 export const Tags = styled.div`
-  color: ${articleTextColors.tagsText};
-  background: ${articleTextColors.tegsBackground};
+  color: ${colors.darkGray};
+  background: ${colors.lightGray};
   height: 1em;
   padding: 2px 8px;
   border-radius: ${cardrRadius};

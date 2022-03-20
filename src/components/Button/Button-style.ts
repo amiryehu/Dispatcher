@@ -8,26 +8,26 @@ export const StyledButton = styled.button`
   border-radius: 20px;
 
   &.primary {
-    background: ${colors.primaryBtn};
-    color: ${colors.primaryText};
+    background: ${colors.blue};
+    color: ${colors.white};
     &:hover{
       opacity: 80%;
     }
   }
 
   &.secondary {
-    background: ${colors.secondaryBtn};
-    color: ${colors.secondaryText};
+    background: ${colors.gray};
+    color: ${colors.darkGray};
     &:hover{
       opacity: 80%;
     }
   }
 
   &.textButton {
-    background: ${colors.textButtonyBtn};
-    color: ${colors.textButtonText};
+    background: ${colors.white};
+    color: ${colors.darkGray};
     &:hover {
-      background: #D9DBE9 30%;
+      background: ${colors.gray} 30%;
     }
   }
 `;
