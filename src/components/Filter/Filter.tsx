@@ -5,7 +5,6 @@ import FormControl from "@mui/material/FormControl";
 import Select, { SelectChangeEvent, SelectProps } from "@mui/material/Select";
 import { boxStyle, selectStyle } from "./Filter-style";
 import { InputLabel } from "@mui/material";
-import { title } from "process";
 import { ReactComponent as DropDownIcon } from "../../assets/Icons/dropdown.svg";
 
 interface IFilter {
