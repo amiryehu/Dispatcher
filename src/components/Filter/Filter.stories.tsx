@@ -1,15 +1,15 @@
 import React from "react";
 
 import { ComponentMeta, ComponentStory } from "@storybook/react";
-import UnstyledSelectSimple from './Filter';
+import BasicSelect from './Filter';
 
 export default {
     title: 'Filter',
-    component: UnstyledSelectSimple,
-} as ComponentMeta<typeof UnstyledSelectSimple>;
+    component: BasicSelect,
+} as ComponentMeta<typeof BasicSelect>;
 
-const Template: ComponentStory<typeof UnstyledSelectSimple> = () => (
-    <UnstyledSelectSimple></UnstyledSelectSimple>
+const Template: ComponentStory<typeof BasicSelect> = () => (
+    <BasicSelect title="amir"></BasicSelect>
 )
 
 export const FilterContainer = Template.bind({});

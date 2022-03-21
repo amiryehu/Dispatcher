@@ -2,6 +2,7 @@ import React from "react";
 import './App.css';
 import Button from "./components/Button/Button";
 import Card from "./components/Card/Card";
+import BasicSelect from "./components/Filter/Filter";
 
 import data from './mockData/mockData.json';
 
@@ -17,7 +18,8 @@ function App() {
 
   return (
     <div>
-      <Card urlToImage={urlToImage} publishedAt={publishedAt} title={title} name={name} description={description} url={url}></Card>
+      {/* <Card urlToImage={urlToImage} publishedAt={publishedAt} title={title} name={name} description={description} url={url}></Card> */}
+      <BasicSelect title="amir" items={['a','b','c']}></BasicSelect>
     </div>
   );
 }
