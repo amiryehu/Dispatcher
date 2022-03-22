@@ -5,9 +5,6 @@ export const boxStyle = {
     width: "12rem",
     bgcolor: "white",
     borderRadius: "14px",
-    // "hover .MuiOutlinedInput-root .MuiInputBase-root .MuiInputBase-colorPrimar": {  // cancel the botder from Box component
-    //     border: "0px", 
-    //   },
 };
 
 export const selectStyle = {

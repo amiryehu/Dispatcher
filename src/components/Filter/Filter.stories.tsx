@@ -8,9 +8,13 @@ export default {
     component: BasicSelect,
 } as ComponentMeta<typeof BasicSelect>;
 
-const Template: ComponentStory<typeof BasicSelect> = () => (
-    <BasicSelect title="amir"></BasicSelect>
+const itemlist = ['a', 'b', 'c', 'd'];
+const title = "Source";
+
+const Template: ComponentStory<typeof BasicSelect> = (args) => (
+
+    <BasicSelect  {...args}></BasicSelect>
 )
 
 export const FilterContainer = Template.bind({});
-FilterContainer.args = {};
+FilterContainer.args = {items: itemlist, title: title};
