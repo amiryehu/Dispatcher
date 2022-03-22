@@ -6,6 +6,7 @@ import Select, { SelectChangeEvent, SelectProps } from "@mui/material/Select";
 import { boxStyle, selectStyle } from "./Filter-style";
 import { InputLabel } from "@mui/material";
 import { ReactComponent as DropDownIcon } from "../../assets/Icons/dropdown.svg";
+import { title } from "process";
 
 interface IFilter {
   title: string;
@@ -14,20 +15,27 @@ interface IFilter {
 }
 
 export default function BasicSelect(props: IFilter) {
-  const [dropDownTitle, setDropDownTitle] = React.useState("");
+  const [selectedItem, setselectedItem] = React.useState("");
 
   const handleChange = (event: SelectChangeEvent) => {
-    setDropDownTitle(event.target.value as string);
+    setselectedItem(event.target.value as string);
   };
 
   return (
     <Box sx={{ ...boxStyle }}>
       <FormControl fullWidth focused={false}>
-        <InputLabel>HARD CODE</InputLabel>
         <Select
-          value={dropDownTitle}
+          displayEmpty
           onChange={handleChange}
           sx={{ ...selectStyle }}
+          renderValue={(value)=> {
+            if(value.length === 0){
+              return <em>{title}</em>
+            } else {
+              return <em>{selectedItem}</em>
+            }
+          }}
+          value={selectedItem}
           IconComponent={DropDownIcon}
         >
           <MenuItem value="">

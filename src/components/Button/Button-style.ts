@@ -10,7 +10,7 @@ export const StyledButton = styled.button`
   &.primary {
     background: ${colors.blue};
     color: ${colors.white};
-    &:hover{
+    &:hover {
       opacity: 80%;
     }
   }
@@ -18,7 +18,7 @@ export const StyledButton = styled.button`
   &.secondary {
     background: ${colors.gray};
     color: ${colors.darkGray};
-    &:hover{
+    &:hover {
       opacity: 80%;
     }
   }
@@ -29,5 +29,12 @@ export const StyledButton = styled.button`
     &:hover {
       background: ${colors.gray} 30%;
     }
+  }
+
+  &.logInButton {
+    width: 100%;
+    border-radius: 10px;
+    background: ${colors.blue};
+    color: ${colors.white};
   }
 `;

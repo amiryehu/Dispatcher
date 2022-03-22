@@ -21,7 +21,7 @@ function App() {
     <div>
       {/* <Card urlToImage={urlToImage} publishedAt={publishedAt} title={title} name={name} description={description} url={url}></Card> */}
       {/* <BasicSelect title="amir" items={['a','b','c']}></BasicSelect> */}
-      <LogIn></LogIn>
+      <LogIn/>
     </div>
   );
 }
