@@ -37,6 +37,7 @@ export default function BasicSelect(props: IFilter) {
           value={selectedItem}
           IconComponent={DropDownIcon}
         >
+          <MenuItem value="">{title}</MenuItem>
           {items.map((item) => (
             <MenuItem value={item}>{item}</MenuItem>
           ))}
