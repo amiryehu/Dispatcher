@@ -1,13 +1,18 @@
 import React from "react";
+import {AavatarWrapper} from './Avatar-style';
 
-interface IAvatar {}
+interface IAvatar {
+  firstName: string,
+  lastName: string,
+  onClick?: ()=>void
+}
 
 const Avatar = (props: IAvatar) => {
-  const {} = props;
+  const {firstName, lastName} = props;
   return (
-    <div>
-        amir
-    </div>
+    <AavatarWrapper >
+      {firstName.charAt(0) + lastName.charAt(0)}
+    </AavatarWrapper>
   );
 };
 
