@@ -20,6 +20,11 @@ export default function BasicSelect(props: IFilter) {
     setSelectedItem(event.target.value as string);
   };
 
+  const handleMenuItem = () => {
+    return items.map((item) => 
+          <MenuItem value={item}>{item}</MenuItem>);
+  };
+
   return (
     <Box sx={{ ...boxStyle }}>
       <FormControl fullWidth focused={false}>
@@ -27,20 +32,11 @@ export default function BasicSelect(props: IFilter) {
           displayEmpty
           onChange={handleChange}
           sx={{ ...selectStyle }}
-          renderValue={(value)=>{
-            if (value.length === 0) {
-              return <em>{title}</em>;
-            } else {
-              return <em>{selectedItem}</em>;
-            }
-          }}
           value={selectedItem}
           IconComponent={DropDownIcon}
         >
           <MenuItem value="">{title}</MenuItem>
-          {items.map((item) => (
-            <MenuItem value={item}>{item}</MenuItem>
-          ))}
+          {handleMenuItem()}
         </Select>
       </FormControl>
     </Box>
