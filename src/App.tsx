@@ -4,8 +4,11 @@ import Button from "./components/Button/Button";
 import Card from "./components/Card/Card";
 import BasicSelect from "./components/Filter/Filter";
 import LogIn from "./components/Login/LogIn";
+import Avatar from "./components/Avatar/Avatar";
+import SearchForm from "./components/Search/Search";
 
 import data from './mockData/mockData.json';
+import Header from "./components/Header/Header";
 
 const name = data.articles[0].source.name;
 const title = data.articles[0].title;
@@ -20,8 +23,11 @@ function App() {
   return (
     <div>
       {/* <Card urlToImage={urlToImage} publishedAt={publishedAt} title={title} name={name} description={description} url={url}></Card> */}
-      <BasicSelect title="Source" items={['a','b','c']}></BasicSelect>
+      {/* <BasicSelect title="Source" items={['a','b','c']}></BasicSelect> */}
       {/* <LogIn/> */}
+      {/* <Avatar firstName="Amir" lastName="Yehuda"/> */}
+      <SearchForm/>
+      {/* <Header/> */}
     </div>
   );
 }
