@@ -1,9 +1,14 @@
 import styled from "styled-components";
 import { colors } from "../../Utils/Constances";
+import { screenSize } from "../../Utils/Constances";
 
 export const LogInPage = styled.div`
+  width: 100% ;
   display: flex;
   flex-direction: row;
+  @media screen and (max-width: ${screenSize.tablet}) {
+    flex-direction: column;
+  }
 `;
 
 export const LogoComponent = styled.div`
@@ -13,6 +18,10 @@ export const LogoComponent = styled.div`
   justify-content: center;
   align-items: center;
   background-color: ${colors.darkBlue};
+  @media screen and (max-width: ${screenSize.tablet}) {
+    width: 100%;
+    height: 31vh;
+  }
 `;
 
 export const WelcomeComponent = styled.div`
@@ -22,6 +31,11 @@ export const WelcomeComponent = styled.div`
   flex-direction: column;
   justify-content: center;
   background-color: ${colors.lightGray};
+  @media screen and (max-width: ${screenSize.tablet}) {
+    width: 100%;
+    height: 69vh;
+    justify-content: center;
+  }
 `;
 
 export const WelcomeWrapper = styled.div`
@@ -33,16 +47,31 @@ export const WelcomeWrapper = styled.div`
   flex-direction: column;
   justify-content: center;
   align-content: space-between;
+  @media screen and (max-width: ${screenSize.tablet}) {
+    width: 90%;
+    height: 69vh;
+    margin-left: 2.3rem;
+    gap: 31rem;
+  }
 `;
 
 export const WelcomeTitle = styled.div`
   color: ${colors.darkGray};
   font-size: 2em;
   font-weight: 300;
+  @media screen and (max-width: ${screenSize.tablet}) {
+    display: flex;
+    justify-content: center;
+  }
 `;
 
 export const WelcomeMessage = styled.div`
   color: ${colors.darkGray};
   font-size: 1.6em;
   font-weight: 100;
+  @media screen and (max-width: ${screenSize.tablet}) {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+  }
 `;

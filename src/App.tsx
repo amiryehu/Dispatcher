@@ -24,9 +24,9 @@ function App() {
     <div>
       {/* <Card urlToImage={urlToImage} publishedAt={publishedAt} title={title} name={name} description={description} url={url}></Card> */}
       {/* <BasicSelect title="Source" items={['a','b','c']}></BasicSelect> */}
-      {/* <LogIn/> */}
+      <LogIn/>
       {/* <Avatar firstName="Amir" lastName="Yehuda"/> */}
-      <SearchForm/>
+      {/* <SearchForm/> */}
       {/* <Header/> */}
     </div>
   );
