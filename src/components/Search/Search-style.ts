@@ -19,8 +19,12 @@ export const SearchWrapper = styled.div`
   display: flex;
   width: 100%;
   align-items: center;
-
 `;
+
+export const searchIconStyle = {
+  marginRight: "4px", 
+  minWidth: "26px"
+};
 
 export const FilterDividerWrapper = styled.div`
   display: flex;
@@ -31,6 +35,11 @@ export const FilterDividerWrapper = styled.div`
     display: none;
   }
 `;
+
+export const dividerStyle = {
+  height: 28, 
+  m: 0.5
+};
 
 export const paperStyle = {
   width: "100%",

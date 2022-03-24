@@ -6,7 +6,7 @@ import { FilterWrapper } from "../Filter/Filter-style";
 import Divider from "@mui/material/Divider";
 
 import { ReactComponent as SearchIcon } from "../../assets/Icons/search.svg";
-import { paperStyle, SearchWrapper, FilterDividerWrapper, PaperWrapper, inputBaseStyle,} from "./Search-style";
+import { paperStyle, SearchWrapper, FilterDividerWrapper, PaperWrapper, inputBaseStyle, searchIconStyle, dividerStyle} from "./Search-style";
 import { useState } from "react";
 
 const SearchForm = (props: any) => {
@@ -18,7 +18,7 @@ const SearchForm = (props: any) => {
     <PaperWrapper isFocused={isFocused}>
       <Paper component="form" sx={{ ...paperStyle }}>
         <SearchWrapper>
-          <SearchIcon style={{ marginRight: "4px", minWidth: "26px" }} />
+          <SearchIcon style={{ ...searchIconStyle }} />
           <InputBase
             onClick={() => setIsFocused(true)}
             onBlur={() => setIsFocused(false)}
@@ -29,7 +29,7 @@ const SearchForm = (props: any) => {
         </SearchWrapper>
 
         <FilterDividerWrapper>
-          <Divider sx={{ height: 28, m: 0.5 }} orientation="vertical" />
+          <Divider sx={{ ...dividerStyle }} orientation="vertical" />
           <FilterWrapper className="searchFilter">
             <BasicSelect
               title="Eevrithing"

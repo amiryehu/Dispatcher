@@ -24,6 +24,17 @@ export const LogoComponent = styled.div`
   }
 `;
 
+export const LogoWrapper = styled.div`
+  display: flex;
+  align-items: center;
+  height: 100vh;
+  width: 100%;
+  @media screen and (max-width: ${screenSize.tablet}) {
+    height: 205px;
+    width: 350px;
+  }
+`;
+
 export const WelcomeComponent = styled.div`
   width: 72%;
   height: 100vh;
@@ -62,6 +73,8 @@ export const WelcomeTitle = styled.div`
   @media screen and (max-width: ${screenSize.tablet}) {
     display: flex;
     justify-content: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
   }
 `;
 
