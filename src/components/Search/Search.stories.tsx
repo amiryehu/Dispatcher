@@ -1,14 +1,14 @@
 import React from "react";
 import { ComponentMeta, ComponentStory } from "@storybook/react";
-import Search from "./Search";
+import SearchForm from "./Search";
 
 export default {
   title: "Search",
-  component: Search,
-} as ComponentMeta<typeof Search>;
+  component: SearchForm,
+} as ComponentMeta<typeof SearchForm>;
 
-const Template: ComponentStory<typeof Search> = (args) => (
-  <Search {...args}></Search>
+const Template: ComponentStory<typeof SearchForm> = (args) => (
+  <SearchForm {...args}></SearchForm>
 );
 
 export const search = Template.bind({});

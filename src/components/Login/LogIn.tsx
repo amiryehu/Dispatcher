@@ -2,7 +2,6 @@ import React from "react";
 import Button from "../Button/Button";
 import {  LogInPage,  LogoComponent,  WelcomeComponent,  WelcomeWrapper,  WelcomeTitle,  WelcomeMessage,} from "./LogIn-style";
 import { ReactComponent as LogInLogo } from "../../assets/Icons/logo.svg";
-import { ReactComponent as LineSVG } from "../../assets/Icons/line.svg";
 import "../../assets/Icons/logo.svg";
 import { buttonType } from "../../Utils/Constances";
 import {SeparatingLine} from '../../Utils/Constances';

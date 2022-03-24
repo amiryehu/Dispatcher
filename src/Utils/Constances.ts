@@ -27,3 +27,8 @@ export const SeparatingLine = styled.div`
     margin-bottom: 10px;
     border-color: ${colors.gray};
 `;
+
+export const screenSize = {
+  tablet: '770px',
+  mobile: '375px'
+};

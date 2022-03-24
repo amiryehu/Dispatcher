@@ -1,14 +1,60 @@
-import React from "react";
+import * as React from "react";
+import Paper from "@mui/material/Paper";
+import InputBase from "@mui/material/InputBase";
+import BasicSelect from "../Filter/Filter";
+import { FilterWrapper } from "../Filter/Filter-style";
+import Divider from "@mui/material/Divider";
 
-interface ISearch {}
+import { ReactComponent as SearchIcon } from "../../assets/Icons/search.svg";
+import { paperStyle, SearchWrapper, FilterDividerWrapper, PaperWrapper, inputBaseStyle,} from "./Search-style";
+import { useState } from "react";
 
-const Search = (props: ISearch) => {
-  const {} = props;
+const SearchForm = (props: any) => {
+  const [isFocused, setIsFocused] = useState(false);
+  React.useEffect(() => {
+    console.log(isFocused);
+  }, [isFocused]);
   return (
-    <div>
-      amir
-    </div>
+    <PaperWrapper isFocused={isFocused}>
+      <Paper component="form" sx={{ ...paperStyle }}>
+        <SearchWrapper>
+          <SearchIcon style={{ marginRight: "4px", minWidth: "26px" }} />
+          <InputBase
+            onClick={() => setIsFocused(true)}
+            onBlur={() => setIsFocused(false)}
+            sx={{ ...inputBaseStyle }}
+            autoFocus={true}
+            placeholder="Search"
+          />
+        </SearchWrapper>
+
+        <FilterDividerWrapper>
+          <Divider sx={{ height: 28, m: 0.5 }} orientation="vertical" />
+          <FilterWrapper className="searchFilter">
+            <BasicSelect
+              title="Eevrithing"
+              items={["Eevrithing", "Top Headlines"]}
+            />
+          </FilterWrapper>
+        </FilterDividerWrapper>
+      </Paper>
+    </PaperWrapper>
   );
 };
 
-export default Search;
+export default SearchForm;
+
+// import React from "react";
+
+// interface ISearch {}
+
+// const Search = (props: ISearch) => {
+//   const {} = props;
+//   return (
+//     <div>
+//       amir
+//     </div>
+//   );
+// };
+
+// export default Search;
