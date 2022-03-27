@@ -7,8 +7,8 @@ export default {
   component: SearchForm,
 } as ComponentMeta<typeof SearchForm>;
 
-const Template: ComponentStory<typeof SearchForm> = (args) => (
-  <SearchForm {...args}></SearchForm>
+const Template: ComponentStory<typeof SearchForm> = () => (
+  <SearchForm ></SearchForm>
 );
 
 export const search = Template.bind({});

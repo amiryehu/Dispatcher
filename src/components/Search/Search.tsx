@@ -6,34 +6,33 @@ import { FilterWrapper } from "../Filter/Filter-style";
 import Divider from "@mui/material/Divider";
 
 import { ReactComponent as SearchIcon } from "../../assets/Icons/search.svg";
-import { paperStyle, SearchWrapper, FilterDividerWrapper, PaperWrapper, inputBaseStyle, searchIconStyle, dividerStyle} from "./Search-style";
+import { paperStyle, SearchWrapper, FilterDividerWrapper, PaperWrapper, textFieldStyle, searchIconStyle, dividerStyle} from "./Search-style";
 import { useState } from "react";
+import { TextField } from "@mui/material";
 
-const SearchForm = (props: any) => {
+const SearchForm = () => {
   const [isFocused, setIsFocused] = useState(false);
-  React.useEffect(() => {
-    console.log(isFocused);
-  }, [isFocused]);
+  const handleFocusState = () => {setIsFocused((state)=> !state)}
+  
   return (
     <PaperWrapper isFocused={isFocused}>
       <Paper component="form" sx={{ ...paperStyle }}>
         <SearchWrapper>
           <SearchIcon style={{ ...searchIconStyle }} />
-          <InputBase
-            onClick={() => setIsFocused(true)}
-            onBlur={() => setIsFocused(false)}
-            sx={{ ...inputBaseStyle }}
+          <TextField 
             autoFocus={true}
             placeholder="Search"
-          />
+            onClick={handleFocusState}
+            onBlur={handleFocusState}
+            sx={{ ...textFieldStyle }}/>
         </SearchWrapper>
 
         <FilterDividerWrapper>
           <Divider sx={{ ...dividerStyle }} orientation="vertical" />
           <FilterWrapper className="searchFilter">
             <BasicSelect
-              title="Eevrithing"
-              items={["Eevrithing", "Top Headlines"]}
+              title="Everything"
+              items={["Everything", "Top Headlines"]}
             />
           </FilterWrapper>
         </FilterDividerWrapper>
@@ -43,18 +42,3 @@ const SearchForm = (props: any) => {
 };
 
 export default SearchForm;
-
-// import React from "react";
-
-// interface ISearch {}
-
-// const Search = (props: ISearch) => {
-//   const {} = props;
-//   return (
-//     <div>
-//       amir
-//     </div>
-//   );
-// };
-
-// export default Search;

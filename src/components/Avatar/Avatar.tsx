@@ -2,16 +2,26 @@ import React from "react";
 import {AavatarWrapper} from './Avatar-style';
 
 interface IAvatar {
-  firstName: string,
-  lastName: string,
+  userName: string,
   onClick?: ()=>void
 }
 
+const getFirtLetterFromNames = (name: string) => {
+  const splitNameArray = name.split(' ');
+  splitNameArray.length = 3;
+  for(let i = 0; i < splitNameArray.length ; i++) {
+    splitNameArray[i] = splitNameArray[i].charAt(0).toUpperCase();
+  }
+  return splitNameArray.join('');
+}
+
 const Avatar = (props: IAvatar) => {
-  const {firstName, lastName} = props;
+  const {userName} = props;
+  const nameInAvatar = getFirtLetterFromNames(userName);
+
   return (
     <AavatarWrapper >
-      {firstName.charAt(0) + lastName.charAt(0)}
+      {nameInAvatar}
     </AavatarWrapper>
   );
 };

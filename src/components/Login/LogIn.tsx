@@ -1,6 +1,6 @@
 import React from "react";
 import Button from "../Button/Button";
-import {  LogInPage,  LogoComponent,  WelcomeComponent,  WelcomeWrapper,  WelcomeTitle,  WelcomeMessage, LogoWrapper,} from "./LogIn-style";
+import {  LogInPage,  LogoComponent,  WelcomeComponent,  WelcomeWrapper,  WelcomeTitle,  WelcomeMessage, LogoWrapper} from "./LogIn-style";
 import { ReactComponent as LogInLogo } from "../../assets/Icons/logo.svg";
 import "../../assets/Icons/logo.svg";
 import { buttonType } from "../../Utils/Constances";
@@ -11,7 +11,7 @@ const LogIn = () => {
     <LogInPage>
       <LogoComponent>
         <LogoWrapper>
-          <LogInLogo />
+          <LogInLogo/>
         </LogoWrapper>
       </LogoComponent>
       <WelcomeComponent>

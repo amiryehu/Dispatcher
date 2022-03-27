@@ -73,8 +73,8 @@ export const WelcomeTitle = styled.div`
   @media screen and (max-width: ${screenSize.tablet}) {
     display: flex;
     justify-content: center;
-    padding-top: 10px;
-    padding-bottom: 10px;
+    padding-top: 120px;
+    padding-bottom: 20px;
   }
 `;
 
