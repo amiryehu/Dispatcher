@@ -6,6 +6,8 @@ import BasicSelect from "./components/Filter/Filter";
 import LogIn from "./components/Login/LogIn";
 import Avatar from "./components/Avatar/Avatar";
 import SearchForm from "./components/Search/Search";
+import Settings from './components/Header/Settings';
+import Notifications from './components/Header/Notifications';
 
 import data from './mockData/mockData.json';
 import Header from "./components/Header/Header";
@@ -24,10 +26,13 @@ function App() {
     <div>
       {/* <Card urlToImage={urlToImage} publishedAt={publishedAt} title={title} name={name} description={description} url={url}></Card> */}
       {/* <BasicSelect title="Source" items={['a','b','c']}></BasicSelect> */}
-      <LogIn/>
-      {/* <Avatar firstName="Amir" lastName="Yehuda"/> */}
-      {/* <SearchForm/> */}
+      {/* <LogIn/> */}
+      {/* <Avatar userName="ofek ben david amir yehuda"/> */}
+      <SearchForm/>
       {/* <Header/> */}
+      {/* <Settings/> */}
+      {/* <Notifications/> */}
+      
     </div>
   );
 }
