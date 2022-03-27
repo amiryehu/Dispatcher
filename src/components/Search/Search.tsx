@@ -1,12 +1,10 @@
 import * as React from "react";
-import Paper from "@mui/material/Paper";
-import InputBase from "@mui/material/InputBase";
 import BasicSelect from "../Filter/Filter";
 import { FilterWrapper } from "../Filter/Filter-style";
 import Divider from "@mui/material/Divider";
 
 import { ReactComponent as SearchIcon } from "../../assets/Icons/search.svg";
-import { paperStyle, SearchWrapper, FilterDividerWrapper, PaperWrapper, textFieldStyle, searchIconStyle, dividerStyle} from "./Search-style";
+import {  SearchWrapper, FilterDividerWrapper, SearchContainerWrapper, textFieldStyle, searchIconStyle, dividerStyle, SearchContainer} from "./Search-style";
 import { useState } from "react";
 import { TextField } from "@mui/material";
 
@@ -15,12 +13,12 @@ const SearchForm = () => {
   const handleFocusState = () => {setIsFocused((state)=> !state)}
   
   return (
-    <PaperWrapper isFocused={isFocused}>
-      <Paper component="form" sx={{ ...paperStyle }}>
+    <SearchContainerWrapper isFocused={isFocused}>
+      <SearchContainer>
         <SearchWrapper>
           <SearchIcon style={{ ...searchIconStyle }} />
           <TextField 
-            autoFocus={true}
+            // autoFocus={}
             placeholder="Search"
             onClick={handleFocusState}
             onBlur={handleFocusState}
@@ -36,8 +34,8 @@ const SearchForm = () => {
             />
           </FilterWrapper>
         </FilterDividerWrapper>
-      </Paper>
-    </PaperWrapper>
+      </SearchContainer>
+    </SearchContainerWrapper>
   );
 };
 

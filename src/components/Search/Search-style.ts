@@ -3,18 +3,32 @@ import styled from "styled-components";
 import { screenSize } from "../../Utils/Constances";
 
 interface IPaperWrapperProps {
-  isFocused: boolean
+  isFocused: boolean;
 }
 
-export const PaperWrapper = styled.div<IPaperWrapperProps>`
+export const SearchContainerWrapper = styled.div<IPaperWrapperProps>`
   display: flex;
   align-items: center;
-  width: ${props => props.isFocused? '623px' : '423px'};
+  width: ${(props) => (props.isFocused ? "623px" : "423px")};
   transition-duration: 500ms;
-  
+
   @media screen and (max-width: ${screenSize.tablet}) {
     width: 300px;
   }
+`;
+
+export const SearchContainer = styled.div`
+  background-color: #fff;
+  color: rgba(0, 0, 0, 0.87);
+  box-shadow: 0px 2px 1px -1px rgb(0 0 0 / 20%),
+    0px 1px 1px 0px rgb(0 0 0 / 14%), 0px 1px 3px 0px rgb(0 0 0 / 12%);
+  width: 100%;
+  height: 57px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 10px;
+  padding-left: 15px;
 `;
 
 export const SearchWrapper = styled.div`
@@ -24,8 +38,8 @@ export const SearchWrapper = styled.div`
 `;
 
 export const searchIconStyle = {
-  marginRight: "4px", 
-  minWidth: "26px"
+  marginRight: "4px",
+  minWidth: "26px",
 };
 
 export const FilterDividerWrapper = styled.div`
@@ -39,18 +53,8 @@ export const FilterDividerWrapper = styled.div`
 `;
 
 export const dividerStyle = {
-  height: 28, 
-  m: 0.5
-};
-
-export const paperStyle = {
-  width: "100%",
-  height: "57px",
-  display: "flex",
-  justifyContent: "space-between",
-  paddingLeft: "15px",
-  alignItems: "center",
-  borderRadius: "10px",
+  height: 28,
+  m: 0.5,
 };
 
 export const textFieldStyle = {
