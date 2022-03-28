@@ -13,6 +13,7 @@ import Notifications from './components/Header/Notifications';
 
 import data from './mockData/mockData.json';
 import Header from "./components/Header/Header";
+import Body from './components/Body/Body';
 
 const name = data.articles[0].source.name;
 const title = data.articles[0].title;
@@ -30,8 +31,9 @@ function App() {
       {/* <BasicSelect title="Source" items={['a','b','c']}></BasicSelect> */}
       {/* <LogIn/> */}
       <Header/>
-      <DataContainer />
+      <Body/>
       {/* <CardContainer/> */}
+      {/* <DataContainer /> */}
       {/* <Avatar userName="ofek ben david amir yehuda"/> */}
       {/* <SearchForm/> */}
       {/* <Settings/> */}
