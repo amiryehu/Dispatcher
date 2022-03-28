@@ -13,4 +13,10 @@ const Template: ComponentStory<typeof DataCard> = (args) => (
 )
 
 export const source = Template.bind({});
-source.args = {title: 'title'};
+source.args = {title: 'Sources'};
+
+export const dates = Template.bind({});
+dates.args = {title: 'Dates'};
+
+export const tags = Template.bind({});
+tags.args = {title: 'Tags'};

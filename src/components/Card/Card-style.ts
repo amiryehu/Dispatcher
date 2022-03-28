@@ -5,6 +5,7 @@ export const CardWrapper = styled.div`
   display: flex;
   width: 51%;
   height: 242px;
+  border: solid ${colors.gray} 1px;
   border-radius: ${cardrRadius};
   background: ${colors.white};
   align-items: center;
