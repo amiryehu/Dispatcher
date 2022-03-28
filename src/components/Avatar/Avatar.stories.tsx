@@ -15,4 +15,4 @@ export const twoNames = Template.bind({});
 twoNames.args = {userName: 'amir yehuda'};
 
 export const threeNames = Template.bind({});
-threeNames.args = {userName: 'ofek ben david'};
+threeNames.args = {userName: 'ofek ben david amir'};

@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { colors } from "../../Utils/Constances";
 
-export const AavatarWrapper = styled.div`
+export const AvatarWrapper = styled.div`
     background-color: ${colors.blue};
     color: ${colors.white};
     font-size: 1rem;

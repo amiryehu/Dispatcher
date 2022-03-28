@@ -1,6 +1,6 @@
 import { width } from "@mui/system";
 import styled from "styled-components";
-import { screenSize } from "../../Utils/Constances";
+import { screenSize , colors } from "../../Utils/Constances";
 
 interface IPaperWrapperProps {
   isFocused: boolean;
@@ -18,10 +18,8 @@ export const SearchContainerWrapper = styled.div<IPaperWrapperProps>`
 `;
 
 export const SearchContainer = styled.div`
-  background-color: #fff;
+  background-color: ${colors.white};
   color: rgba(0, 0, 0, 0.87);
-  box-shadow: 0px 2px 1px -1px rgb(0 0 0 / 20%),
-    0px 1px 1px 0px rgb(0 0 0 / 14%), 0px 1px 3px 0px rgb(0 0 0 / 12%);
   width: 100%;
   height: 57px;
   display: flex;
@@ -54,7 +52,6 @@ export const FilterDividerWrapper = styled.div`
 
 export const dividerStyle = {
   height: 28,
-  m: 0.5,
 };
 
 export const textFieldStyle = {

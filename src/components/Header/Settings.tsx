@@ -10,7 +10,6 @@ export default function SettingsIcon() {
       <Tooltip title="Coming soon">
         <IconButton>
           <img src={Settings} />
-          {/* <Settings/> */}
         </IconButton>
       </Tooltip>
     </div>

@@ -18,7 +18,6 @@ const SearchForm = () => {
         <SearchWrapper>
           <SearchIcon style={{ ...searchIconStyle }} />
           <TextField 
-            // autoFocus={}
             placeholder="Search"
             onClick={handleFocusState}
             onBlur={handleFocusState}
