@@ -7,13 +7,14 @@ import { FilterWrapper, boxStyle, selectStyle } from "./Filter-style";
 import { ReactComponent as DropDownIcon } from "../../assets/Icons/dropdown.svg";
 
 interface IFilter {
-  title: string;
-  items: string[];
-  onChange?: () => void;
+  title: string,
+  items: string[],
+  isSearchFilter?: boolean,
+  onChange?: () => void,
 }
 
 export default function BasicSelect(props: IFilter) {
-  const { title, items } = props;
+  const { title, items, isSearchFilter } = props;
   const [selectedItem, setSelectedItem] = React.useState("");
 
   const handleChange = (event: SelectChangeEvent) => {
@@ -25,7 +26,7 @@ export default function BasicSelect(props: IFilter) {
   };
 
   return (
-    <FilterWrapper>
+    <FilterWrapper isSearchFilter={isSearchFilter}>
       <Box sx={{ ...boxStyle }}>
         <FormControl fullWidth focused={false}>
           <Select

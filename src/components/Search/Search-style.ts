@@ -6,27 +6,21 @@ interface IPaperWrapperProps {
   isFocused: boolean;
 }
 
-export const SearchContainerWrapper = styled.div<IPaperWrapperProps>`
+export const SearchContainer = styled.div<IPaperWrapperProps>`
   display: flex;
   align-items: center;
+  justify-content: space-between;
+  height: 57px;
+  padding-left: 15px;
+  border-radius: 10px;
+  color: rgba(0, 0, 0, 0.87);
+  background-color: ${colors.white};
   width: ${(props) => (props.isFocused ? "623px" : "423px")};
   transition-duration: 500ms;
 
   @media screen and (max-width: ${screenSize.tablet}) {
     width: 300px;
   }
-`;
-
-export const SearchContainer = styled.div`
-  background-color: ${colors.white};
-  color: rgba(0, 0, 0, 0.87);
-  width: 100%;
-  height: 57px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  border-radius: 10px;
-  padding-left: 15px;
 `;
 
 export const SearchWrapper = styled.div`

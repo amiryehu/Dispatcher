@@ -1,12 +1,12 @@
 import styled from "styled-components";
-import { border } from "@mui/system";
 
-export const FilterWrapper = styled.div`
+interface FilterWeapperProps{
+  isSearchFilter?: boolean
+}
+
+export const FilterWrapper = styled.div<FilterWeapperProps>`
   display: flex;
-  width: 175px;
-  &.searchFilter {
-    width: 145px;
-  }
+  width: ${props => props.isSearchFilter? '145px' : '175px'};
 `;
 
 export const boxStyle = {

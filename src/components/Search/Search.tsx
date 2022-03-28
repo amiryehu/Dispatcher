@@ -4,17 +4,17 @@ import { FilterWrapper } from "../Filter/Filter-style";
 import Divider from "@mui/material/Divider";
 
 import { ReactComponent as SearchIcon } from "../../assets/Icons/search.svg";
-import {  SearchWrapper, FilterDividerWrapper, SearchContainerWrapper, textFieldStyle, searchIconStyle, dividerStyle, SearchContainer} from "./Search-style";
+import {  SearchWrapper, FilterDividerWrapper, SearchContainer, textFieldStyle, searchIconStyle, dividerStyle} from "./Search-style";
 import { useState } from "react";
 import { TextField } from "@mui/material";
+import { style } from "@mui/system";
 
 const SearchForm = () => {
   const [isFocused, setIsFocused] = useState(false);
   const handleFocusState = () => {setIsFocused((state)=> !state)}
   
   return (
-    <SearchContainerWrapper isFocused={isFocused}>
-      <SearchContainer>
+    <SearchContainer isFocused={isFocused}>
         <SearchWrapper>
           <SearchIcon style={{ ...searchIconStyle }} />
           <TextField 
@@ -26,15 +26,13 @@ const SearchForm = () => {
 
         <FilterDividerWrapper>
           <Divider sx={{ ...dividerStyle }} orientation="vertical" />
-          <FilterWrapper className="searchFilter">
-            <BasicSelect
-              title="Everything"
-              items={["Everything", "Top Headlines"]}
-            />
-          </FilterWrapper>
+          <BasicSelect
+            title="Everything"
+            items={["Everything", "Top Headlines"]}
+            isSearchFilter={true}
+          />
         </FilterDividerWrapper>
-      </SearchContainer>
-    </SearchContainerWrapper>
+    </SearchContainer>
   );
 };
 
