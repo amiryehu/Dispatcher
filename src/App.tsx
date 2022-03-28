@@ -6,8 +6,13 @@ import CardContainer from "./components/CardContainer/CardContainer";
 import DataContainer from "./components/DataContainer/DataContainer";
 import BasicSelect from "./components/Filter/Filter";
 import LogIn from "./components/Login/LogIn";
+import Avatar from "./components/Avatar/Avatar";
+import SearchForm from "./components/Search/Search";
+import Settings from './components/Header/Settings';
+import Notifications from './components/Header/Notifications';
 
 import data from './mockData/mockData.json';
+import Header from "./components/Header/Header";
 
 const name = data.articles[0].source.name;
 const title = data.articles[0].title;
@@ -26,6 +31,12 @@ function App() {
       {/* <LogIn/> */}
       <DataContainer />
       {/* <CardContainer/> */}
+      {/* <Avatar userName="ofek ben david amir yehuda"/> */}
+      <SearchForm/>
+      {/* <Header/> */}
+      {/* <Settings/> */}
+      {/* <Notifications/> */}
+      
     </div>
   );
 }
