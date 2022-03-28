@@ -25,6 +25,11 @@ export const DataCardHeader = styled.div`
     gap: 9px;
 `;
 
+export const DataContent = styled.div`
+  display: flex;
+  justify-content: center;
+`;
+
 export const BottomLineStyle = styled.div`
     width: 20px;
     border-bottom: solid 4px ${colors.darkGray};

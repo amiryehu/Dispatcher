@@ -2,6 +2,8 @@ import React from "react";
 import './App.css';
 import Button from "./components/Button/Button";
 import Card from "./components/Card/Card";
+import CardContainer from "./components/CardContainer/CardContainer";
+import DataContainer from "./components/DataContainer/DataContainer";
 import BasicSelect from "./components/Filter/Filter";
 import LogIn from "./components/Login/LogIn";
 
@@ -20,8 +22,10 @@ function App() {
   return (
     <div>
       {/* <Card urlToImage={urlToImage} publishedAt={publishedAt} title={title} name={name} description={description} url={url}></Card> */}
-      <BasicSelect title="Source" items={['a','b','c']}></BasicSelect>
+      {/* <BasicSelect title="Source" items={['a','b','c']}></BasicSelect> */}
       {/* <LogIn/> */}
+      {/* <DataContainer /> */}
+      <CardContainer/>
     </div>
   );
 }

@@ -15,6 +15,8 @@ const DataCard = (props: IDataCard) => {
         {title}
         <BottomLineStyle/>
       </DataCardHeader>
+
+
     </DataCardContainer>
   );
 };

@@ -4,6 +4,7 @@ import { colors } from "../../Utils/Constances";
 export const LogInPage = styled.div`
   display: flex;
   flex-direction: row;
+  overflow: hidden;
 `;
 
 export const LogoComponent = styled.div`
