@@ -9,7 +9,7 @@ const DataCard = (props: IDataCard) => {
     const {title} = props;
     
     return (
-        <div>amir</div>
+        <div>{title}</div>
     )
 }
 
