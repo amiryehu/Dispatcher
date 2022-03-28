@@ -1,6 +1,6 @@
 import React from "react";
-import { ReactComponent as Logo } from "../../assets/Icons/logo.svg";
-import { HeaderWrapper, LeftSide, RightSide } from "./Header-style";
+import Logo  from "../../assets/Icons/logo.svg";
+import { HeaderWrapper, LeftSide, RightSide, logoStyle } from "./Header-style";
 import Search from "../Search/Search";
 import Settings from "./Settings";
 import Notifications from "./Notifications";
@@ -13,10 +13,10 @@ const Header = (props: IHeader) => {
   return (
     <HeaderWrapper>
       <LeftSide>
-        <Logo style={{ width: "110px", height: "110px" }} />
+        <img src={Logo} style={logoStyle}/>
         <Search />
       </LeftSide>
-      
+
       <RightSide>
         <Settings />
         <Notifications />

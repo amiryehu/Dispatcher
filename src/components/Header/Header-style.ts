@@ -24,3 +24,8 @@ export const RightSide = styled.div`
     align-items: center;
     margin-right: 15px;
 `;
+
+export const logoStyle = {
+    width: "110px", 
+    height: "110px"
+}
