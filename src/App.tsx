@@ -29,11 +29,11 @@ function App() {
       {/* <Card urlToImage={urlToImage} publishedAt={publishedAt} title={title} name={name} description={description} url={url}></Card> */}
       {/* <BasicSelect title="Source" items={['a','b','c']}></BasicSelect> */}
       {/* <LogIn/> */}
+      <Header/>
       <DataContainer />
       {/* <CardContainer/> */}
       {/* <Avatar userName="ofek ben david amir yehuda"/> */}
       {/* <SearchForm/> */}
-      {/* <Header/> */}
       {/* <Settings/> */}
       {/* <Notifications/> */}
       
