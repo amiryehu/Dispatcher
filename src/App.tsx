@@ -32,7 +32,7 @@ function App() {
       <DataContainer />
       {/* <CardContainer/> */}
       {/* <Avatar userName="ofek ben david amir yehuda"/> */}
-      <SearchForm/>
+      {/* <SearchForm/> */}
       {/* <Header/> */}
       {/* <Settings/> */}
       {/* <Notifications/> */}
