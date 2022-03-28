@@ -28,8 +28,8 @@ function App() {
       {/* <BasicSelect title="Source" items={['a','b','c']}></BasicSelect> */}
       {/* <LogIn/> */}
       {/* <Avatar userName="ofek ben david amir yehuda"/> */}
-      <SearchForm/>
-      {/* <Header/> */}
+      {/* <SearchForm/> */}
+      <Header/>
       {/* <Settings/> */}
       {/* <Notifications/> */}
       
