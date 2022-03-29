@@ -13,7 +13,7 @@ import Notifications from './components/Header/Notifications';
 
 import data from './mockData/mockData.json';
 import Header from "./components/Header/Header";
-import Body from './components/Body/Body';
+import Body from './components/MainContent/MainContent';
 
 const name = data.articles[0].source.name;
 const title = data.articles[0].title;
