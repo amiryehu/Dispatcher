@@ -4,6 +4,9 @@ import {
   DataCardContainer,
   DataCardHeader,
   BottomLineStyle,
+  DataContent,
+  dataContentStyle,
+  chartImgStyle
 } from "./DataCard-style";
 import chartImg from "../../assets/Icons/chart.svg";
 import { colors } from "../../Utils/Constances";
@@ -21,26 +24,12 @@ const DataCard = (props: IDataCard) => {
         {title}
         <BottomLineStyle />
       </DataCardHeader>
-      <div
-        style={{
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
-          flexDirection: "column",
-          gap: "25px",
-        }}
-      >
-        <img src={chartImg} style={{ height: "133px", width: "133px" }} />
-        <div
-          style={{
-            color: `${colors.darkGray}`,
-            fontSize: "18px",
-            fontWeight: "400",
-          }}
-        >
+      <DataContent>
+        <img src={chartImg} style={{...chartImgStyle }} />
+        <div style={{ ...dataContentStyle}}>
           No data to display
         </div>
-      </div>
+      </DataContent>
     </DataCardContainer>
   );
 };

@@ -3,7 +3,7 @@ import DataCard from "../DataCard/DataCard";
 
 const DataContainer = () => {
   return (
-    <div style={{display:'flex', flexDirection:'column' ,gap:'20px'}}>
+    <div style={{width: '24%',display:'flex', flexDirection:'column' ,gap:'20px'}}>
       <DataCard title="Source" />
       <DataCard title="Dates" />
       <DataCard title="Tags" />

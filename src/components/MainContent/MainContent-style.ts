@@ -6,6 +6,5 @@ export const MainContentContainer = styled.div`
     margin-left: 5%;
     margin-right: 5%;
     display: flex;
-    flex-direction: row;
     justify-content: space-between;
 `;
