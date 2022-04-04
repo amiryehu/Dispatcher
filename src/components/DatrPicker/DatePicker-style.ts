@@ -14,6 +14,7 @@ export const textFieldStyleDP = {
   },
   ".css-nxo287-MuiInputBase-input-MuiOutlinedInput-input": {
     color: `${colors.darkGray}`,
+    cursor: 'default',
   },
   "& label.Mui-focused": {
     color: `${colors.darkGray}`,

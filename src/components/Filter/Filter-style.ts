@@ -12,6 +12,7 @@ export const FilterWrapper = styled.div<FilterWeapperProps>`
 
 export const boxStyle = {
   width: "100%",
+  height: "50px",
   bgcolor: "white",
   borderRadius: `${cardrRadius}`,
   "& .MuiOutlinedInput-notchedOutline": {
