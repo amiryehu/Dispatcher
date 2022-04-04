@@ -12,6 +12,7 @@ import Notifications from './components/Header/Notifications';
 import data from './mockData/mockData.json';
 import Header from "./components/Header/Header";
 import BasicDatePicker from "./components/DatrPicker/DatePicker";
+import FilterBar from "./components/FilterBar/FilterBar";
 
 
 const name = data.articles[0].source.name;
@@ -32,7 +33,7 @@ function App() {
       {/* <Avatar userName="ofek ben david amir yehuda"/> */}
       {/* <SearchForm/> */}
       <Header/>
-      <BasicDatePicker/>
+      <FilterBar/>
       {/* <Settings/> */}
       {/* <Notifications/> */}
       
