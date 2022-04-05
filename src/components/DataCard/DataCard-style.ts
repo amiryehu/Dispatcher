@@ -1,12 +1,12 @@
 import styled from "styled-components";
+import { escapeLeadingUnderscores } from "typescript";
 import { colors, cardrRadius, cardShadow } from "../../Utils/Constances";
 
 export const DataCardContainer = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 60px;
   width: 100%;
-  height: 40vh;
+  height: 45vh;
   border: solid ${colors.gray} 1px;
   font-size: 1.5rem;
   border-radius: ${cardrRadius};
@@ -20,6 +20,7 @@ export const DataCardHeader = styled.div`
   color: ${colors.black};
   margin-top: 15px;
   margin-left: 15px;
+  margin-bottom: 40px;
   display: flex;
   justify-content: flex-start;
   align-items: flex-start;

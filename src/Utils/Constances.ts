@@ -13,7 +13,16 @@ export const colors = {
   fadedWhite: "#F8F8FF",
   white: "#FFFFFF",
   black: "#14142b",
+  azure: "00B9FF"
 };
+
+export const pieColors ={
+  black: "#030035",
+  orange: "#FF9800",
+  lightAzure: "#DDF3FE",
+  darkBlue: "#343A6E",
+  gray: "#E8E8E8"
+}
 
 export const buttonType = {
   primary: "primary",
