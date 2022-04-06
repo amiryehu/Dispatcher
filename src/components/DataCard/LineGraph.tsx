@@ -2,52 +2,56 @@ import React from "react";
 import {AreaChart, XAxis,Area, Line, ResponsiveContainer} from 'recharts';
 import { colors } from "../../Utils/Constances";
 
+type ILineGraph = {
+  data: {name: string; value: number}[]
+};
 
-const LineGraph = () => {
-    const data = [
-        {
-          "month": "A",
-          "uv": 4000,
-          "pv": 2400,
-          "amt": 2400
-        },
-        {
-          "month": "B",
-          "uv": 3000,
-          "pv": 1398,
-          "amt": 2210
-        },
-        {
-          "month": "C",
-          "uv": 2000,
-          "pv": 9800,
-          "amt": 2290
-        },
-        {
-          "month": "D",
-          "uv": 2780,
-          "pv": 3908,
-          "amt": 2000
-        },
-        {
-          "month": "E",
-          "uv": 1890,
-          "pv": 4800,
-          "amt": 2181
-        },
-        {
-          "month": "F",
-          "uv": 2390,
-          "pv": 3800,
-          "amt": 2500
-        },
-        {
-          "month": "G",
-          "uv": 3490,
-          "pv": 4300,
-          "amt": 2100
-        }
-      ]
+const LineGraph = (props: ILineGraph) => {
+  const { data } = props;
+    // const data = [
+    //     {
+    //       "month": "A",
+    //       "uv": 4000,
+    //       "pv": 2400,
+    //       "amt": 2400
+    //     },
+    //     {
+    //       "month": "B",
+    //       "uv": 3000,
+    //       "pv": 1398,
+    //       "amt": 2210
+    //     },
+    //     {
+    //       "month": "C",
+    //       "uv": 2000,
+    //       "pv": 9800,
+    //       "amt": 2290
+    //     },
+    //     {
+    //       "month": "D",
+    //       "uv": 2780,
+    //       "pv": 3908,
+    //       "amt": 2000
+    //     },
+    //     {
+    //       "month": "E",
+    //       "uv": 1890,
+    //       "pv": 4800,
+    //       "amt": 2181
+    //     },
+    //     {
+    //       "month": "F",
+    //       "uv": 2390,
+    //       "pv": 3800,
+    //       "amt": 2500
+    //     },
+    //     {
+    //       "month": "G",
+    //       "uv": 3490,
+    //       "pv": 4300,
+    //       "amt": 2100
+    //     }
+    //   ]
   return (
     <ResponsiveContainer width="100%" height="100%">
         <AreaChart width={400} height={150} data={data}
@@ -61,7 +65,7 @@ const LineGraph = () => {
         <XAxis dataKey="month" />
         <Area
             type="monotone"
-            dataKey="uv"
+            dataKey="value"
             stroke={colors.blue}
             fillOpacity={1}
             fill="url(#colorUv)"

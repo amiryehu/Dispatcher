@@ -1,23 +1,15 @@
 import React from "react";
-import { PieChart, Pie, Cell, Legend, ResponsiveContainer } from "recharts";
+import { PieChart, Pie, Cell, ResponsiveContainer } from "recharts";
 import { pieColors } from "../../Utils/Constances";
 import PieItem from "./PieItem";
-import Articles from "../../mockData/mockData.json"
 
+type IPieGraph = {
+  data: {name: string; value: number}[]
+};
 
-const PieGraph = () => {
-  // local data - need to change after connect to real data
+const PieGraph = (props: IPieGraph) => {
+  const { data } = props;
 
-  const articles = Articles;
-  console.log(articles.articles);
-
-   const data = [
-    { name: "NBC", value: 400 },
-    { name: "Vulture", value: 300 },
-    { name: "CNN", value: 300 },
-    { name: "ESPN", value: 200 },
-    { name: "BBC", value: 200 },
-  ];
   const COLORS = [
     pieColors.black,
     pieColors.orange,
@@ -33,18 +25,20 @@ const PieGraph = () => {
   };
 
   const renderPieItem = () => {
-    const fourElement = data.slice(0,4); 
+    const fourElement = data.slice(0, 4);
     return fourElement.map((entry, index) => (
-      <PieItem title={data[index].name} itemColor={COLORS[index % COLORS.length]} />
+      <PieItem
+        title={data[index].name}
+        itemColor={COLORS[index % COLORS.length]}
+      />
     ));
   };
-
 
   return (
     <>
       <ResponsiveContainer width="100%" height="50%">
         <PieChart width={400} height={400}>
-          <Pie data={data} innerRadius={60} outerRadius={70} dataKey="value" >
+          <Pie data={data} innerRadius={60} outerRadius={70} dataKey="value">
             {renderGraphColors()}
           </Pie>
         </PieChart>

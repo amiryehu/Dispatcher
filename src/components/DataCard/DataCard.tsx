@@ -1,13 +1,21 @@
 import { type } from "os";
 import React from "react";
-import {  DataCardContainer,  DataCardHeader,  BottomLineStyle,  DataContent,  dataContentStyle,  chartImgStyle,} from "./DataCard-style";
+import {
+  DataCardContainer,
+  DataCardHeader,
+  BottomLineStyle,
+  DataContent,
+  dataContentStyle,
+  chartImgStyle,
+} from "./DataCard-style";
 import chartImg from "../../assets/Icons/chart.svg";
 import LineGraph from "./LineGraph";
 import PieGraph from "./PieGraph";
+import Articles from "../../mockData/mockData.json";
 
 type IDataCard = {
-  title: string;
-  type: string;
+  title: string,
+  type: string,
 };
 
 enum types {
@@ -17,6 +25,29 @@ enum types {
 
 const DataCard = (props: IDataCard) => {
   const { title, type } = props;
+  
+  // arranged data
+  const articles = Articles.articles;
+  let sumOfArticles = 0;
+  const sourceCounter: { [key: string]: number } = {};
+  const sortedSource: { name: string; value: number }[] = [];
+
+  for (const element of articles) {
+    if (sourceCounter[element.source.name]) {
+      sourceCounter[element.source.name] += 1;
+    } else {
+      sourceCounter[element.source.name] = 1;
+    }
+    sumOfArticles++;
+  }
+
+  for (const source in sourceCounter) {
+    sortedSource.push({ name: source, value: sourceCounter[source] });
+  }
+  sortedSource.sort(function (a, b) {
+    return b.value - a.value;
+  });
+  // end arranged data
 
   const rendeNoDataCase = () => {
     return (
@@ -28,11 +59,11 @@ const DataCard = (props: IDataCard) => {
   };
 
   const returnGraphsOrNoDataCase = () => {
-    switch (type){
+    switch (type) {
       case types.Source:
-        return <PieGraph />;
+        return <PieGraph data={sortedSource} />;
       case types.Dates:
-        return <LineGraph />;
+        return <LineGraph data={sortedSource} />;
       default:
         return rendeNoDataCase();
     }
