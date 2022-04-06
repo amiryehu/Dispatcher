@@ -1,5 +1,5 @@
 import React from "react";
-import { Circle, PieItemStyle, leftSide, percentage } from "./PieItem-style";
+import { Circle, PieItemStyle, Percentage, TitleAndMark } from "./PieItem-style";
 
 interface IPieItem {
   title: string;
@@ -13,11 +13,11 @@ const PieItem = (props: IPieItem) => {
 
   return (
     <PieItemStyle>
-      <div style={{ ...leftSide }}>
+      <TitleAndMark>
         <Circle color={itemColor} />
         {title}
-      </div>
-      <div style={{...percentage}}>%15</div>
+      </TitleAndMark>
+      <Percentage>%15</Percentage>
     </PieItemStyle>
   );
 };

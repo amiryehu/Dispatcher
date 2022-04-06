@@ -1,8 +1,8 @@
 import { type } from "os";
 import React from "react";
-import {  DataCardContainer,  DataCardHeader,  BottomLineStyle,  DataContent,  dataContentStyle,  chartImgStyle} from "./DataCard-style";
+import {  DataCardContainer,  DataCardHeader,  BottomLineStyle,  DataContent,  dataContentStyle,  chartImgStyle,} from "./DataCard-style";
 import chartImg from "../../assets/Icons/chart.svg";
-import LineGraph  from './LineGraph'
+import LineGraph from "./LineGraph";
 import PieGraph from "./PieGraph";
 
 type IDataCard = {
@@ -10,19 +10,33 @@ type IDataCard = {
   type: string;
 };
 
+enum types {
+  Source = "Source",
+  Dates = "Dates",
+}
+
 const DataCard = (props: IDataCard) => {
   const { title, type } = props;
 
-  const renderGraph = () => {
-    return(
+  const rendeNoDataCase = () => {
+    return (
       <DataContent>
-        <img src={chartImg} style={{...chartImgStyle }} />
-        <div style={{ ...dataContentStyle}}>
-          No data to display
-        </div>
+        <img src={chartImg} style={{ ...chartImgStyle }} />
+        <div style={{ ...dataContentStyle }}>No data to display</div>
       </DataContent>
-    )
-  }
+    );
+  };
+
+  const returnGraphsOrNoDataCase = () => {
+    switch (type){
+      case types.Source:
+        return <PieGraph />;
+      case types.Dates:
+        return <LineGraph />;
+      default:
+        return rendeNoDataCase();
+    }
+  };
 
   return (
     <DataCardContainer>
@@ -30,7 +44,7 @@ const DataCard = (props: IDataCard) => {
         {title}
         <BottomLineStyle />
       </DataCardHeader>
-      {type == 'Source'? <PieGraph/>: type =='Dates'? <LineGraph/> : renderGraph()}
+      {returnGraphsOrNoDataCase()}
     </DataCardContainer>
   );
 };

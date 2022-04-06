@@ -21,7 +21,8 @@ export const pieColors ={
   orange: "#FF9800",
   lightAzure: "#DDF3FE",
   darkBlue: "#343A6E",
-  gray: "#E8E8E8"
+  gray: "#E8E8E8",
+  fadedGray: "#9FA2B4"
 }
 
 export const buttonType = {

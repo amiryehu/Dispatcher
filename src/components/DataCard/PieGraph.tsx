@@ -4,9 +4,14 @@ import { pieColors } from "../../Utils/Constances";
 import PieItem from "./PieItem";
 import Articles from "../../mockData/mockData.json"
 
+
 const PieGraph = () => {
   // local data - need to change after connect to real data
-  const data = [
+
+  const articles = Articles;
+  console.log(articles.articles);
+
+   const data = [
     { name: "NBC", value: 400 },
     { name: "Vulture", value: 300 },
     { name: "CNN", value: 300 },
@@ -37,9 +42,9 @@ const PieGraph = () => {
 
   return (
     <>
-      <ResponsiveContainer width="100%" height="40%">
-        <PieChart>
-          <Pie data={data} innerRadius={60} outerRadius={70} dataKey="value">
+      <ResponsiveContainer width="100%" height="50%">
+        <PieChart width={400} height={400}>
+          <Pie data={data} innerRadius={60} outerRadius={70} dataKey="value" >
             {renderGraphColors()}
           </Pie>
         </PieChart>
