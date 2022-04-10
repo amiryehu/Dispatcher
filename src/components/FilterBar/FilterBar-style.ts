@@ -6,5 +6,5 @@ export const FiltersBar = styled.div`
     justify-content: center;
     align-items: flex-start;
     gap: 3%;
+    padding-top: 10px;
 `;
-

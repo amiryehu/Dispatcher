@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { cardrRadius } from "../../Utils/Constances";
+import { cardrRadius, colors } from "../../Utils/Constances";
 
 interface FilterWeapperProps{
   isSearchFilter?: boolean
@@ -12,8 +12,8 @@ export const FilterWrapper = styled.div<FilterWeapperProps>`
 
 export const boxStyle = {
   width: "100%",
-  height: "50px",
-  bgcolor: "white",
+  height: "52px",
+  bgcolor: `${colors.white}`,
   borderRadius: `${cardrRadius}`,
   "& .MuiOutlinedInput-notchedOutline": {
     border: "0px",
@@ -21,6 +21,7 @@ export const boxStyle = {
 };
 
 export const selectStyle = {
+  color: `${colors.darkGray}`,
   borderRadius: `${cardrRadius}`,
   border: "0px",
   "&:hover .MuiOutlinedInput-notchedOutline": {

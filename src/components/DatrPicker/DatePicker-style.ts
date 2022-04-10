@@ -4,8 +4,12 @@ import { cardrRadius } from "../../Utils/Constances";
 import { colors } from "../../Utils/Constances";
 
 export const textFieldStyleDP = {
+  bgcolor:`${colors.white}`,
+  borderRadius: `${cardrRadius}`,
+  width: '190px',
+  height: "52px",
+  
   "& .MuiOutlinedInput-notchedOutline": {
-    borderRadius: `${cardrRadius}`,
     color: `${colors.darkGray}`,
     border: "0px",
   },

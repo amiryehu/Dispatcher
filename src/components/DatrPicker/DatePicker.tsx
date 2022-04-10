@@ -17,9 +17,9 @@ export default function BasicDatePicker() {
         inputFormat="dd/MM/yyy"
         value={value}
         components={{ OpenPickerIcon: DateIcon }}
-        // onChange={(newValue: Date) => {
-        //   setValue(newValue);
-        // }}
+        onChange={(newValue) => {
+          setValue(newValue);
+        }}
         renderInput={(params) => (
           <TextField
             InputLabelProps={{
