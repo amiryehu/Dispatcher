@@ -5,9 +5,10 @@ import { DatePicker as DatePickerMui } from "@mui/lab";
 import AdapterDateFns from "@mui/lab/AdapterDateFns";
 import { textFieldStyleDP } from "./DatePicker-style";
 import { ReactComponent as DateIcon } from "../../assets/Icons/date.svg";
+import { useState } from "react";
 
 export default function BasicDatePicker() {
-  const [value, setValue] = React.useState<Date | null>(null);
+  const [value, setValue] = useState<Date | null>(null);
 
   return (
     <LocalizationProvider dateAdapter={AdapterDateFns}>
@@ -16,9 +17,9 @@ export default function BasicDatePicker() {
         inputFormat="dd/MM/yyy"
         value={value}
         components={{ OpenPickerIcon: DateIcon }}
-        onChange={(newValue) => {
-          setValue(newValue);
-        }}
+        // onChange={(newValue: Date) => {
+        //   setValue(newValue);
+        // }}
         renderInput={(params) => (
           <TextField
             InputLabelProps={{
