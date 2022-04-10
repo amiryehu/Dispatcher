@@ -6,9 +6,11 @@ export const LogInPage = styled.div`
   width: 100% ;
   display: flex;
   flex-direction: row;
+  overflow: hidden;
   @media screen and (max-width: ${screenSize.tablet}) {
     flex-direction: column;
   }
+
 `;
 
 export const LogoComponent = styled.div`
