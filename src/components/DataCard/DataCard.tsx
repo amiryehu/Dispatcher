@@ -27,7 +27,7 @@ const DataCard = (props: IDataCard) => {
   const { title, type } = props;
   
   // arranged data
-  const articles = Articles.articles;
+  const articles = Articles.articles ;
   let sumOfArticles = 0;
   const sourceCounter: { [key: string]: number } = {};
   const sortedSource: { name: string; value: number }[] = [];
@@ -59,11 +59,14 @@ const DataCard = (props: IDataCard) => {
   };
 
   const returnGraphsOrNoDataCase = () => {
+    if(!sortedSource || sortedSource.length === 0)
+      return rendeNoDataCase()
+
     switch (type) {
       case types.Source:
-        return <PieGraph data={sortedSource} />;
+          return <PieGraph data={sortedSource} />;   
       case types.Dates:
-        return <LineGraph data={sortedSource} />;
+          return <LineGraph data={sortedSource} />; 
       default:
         return rendeNoDataCase();
     }
