@@ -5,6 +5,7 @@ import FormControl from "@mui/material/FormControl";
 import Select, { SelectChangeEvent, SelectProps } from "@mui/material/Select";
 import { FilterWrapper, boxStyle, selectStyle } from "./Filter-style";
 import { ReactComponent as DropDownIcon } from "../../assets/Icons/dropdown.svg";
+import { useState } from "react";
 
 interface IFilter {
   title: string,
@@ -15,7 +16,7 @@ interface IFilter {
 
 export default function BasicSelect(props: IFilter) {
   const { title, items, isSearchFilter } = props;
-  const [selectedItem, setSelectedItem] = React.useState("");
+  const [selectedItem, setSelectedItem] = useState("");
 
   const handleChange = (event: SelectChangeEvent) => {
     setSelectedItem(event.target.value as string);
