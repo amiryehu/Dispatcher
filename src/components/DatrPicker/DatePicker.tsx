@@ -1,17 +1,32 @@
 import React, { useState } from "react";
-import { DatePickerStyle, DateTitle, DateButton } from "./DatePicker-style";
-import DateIcon from '../../assets/Icons/date.svg'
+import DateIcon from "../../assets/Icons/date.svg";
+import DatePicker from "react-datepicker";
+import { DatePickerWrapper, DateStyle } from "./DatePicker-style";
 
 const BasicDatePicker = () => {
-  const [isClicked, setIsClicked] = useState(false);
+  const [dateRange, setDateRange] = useState<[Date|null,Date|null]>([null, null]);
+  const [startDate, endDate] = dateRange;
+  const [shouldOpen, setShouldOpen] = useState(false);
 
-  return <DatePickerStyle>
-          <DateTitle>
-            Date
-          </DateTitle>
-          <DateButton isClicked={isClicked}>
-            <img src={DateIcon}/>
-          </DateButton>
-        </DatePickerStyle>;
+  return (
+    <DatePickerWrapper onClick={()=>setShouldOpen(true)}>
+      
+      <DatePicker
+        open={shouldOpen}
+        placeholderText="Date"
+        selectsRange={true}
+        startDate={startDate}
+        endDate={endDate}
+        onChange={(update) => {
+          setDateRange(update);
+          
+        }}
+        onClickOutside={()=>setShouldOpen(false)}
+        />
+        <DateStyle/>
+        <img src={DateIcon}/>
+    </DatePickerWrapper>
+  );
 };
+
 export default BasicDatePicker;
