@@ -1,14 +1,21 @@
 import React from "react";
-import { MainContentContainer } from "./MainContent-style";
+import { MainContentContainer, AllBody, HeaderMain } from "./MainContent-style";
 import CardContainer from "../CardContainer/CardContainer";
 import DataContainer from "../DataContainer/DataContainer";
+import FilterBar from "../FilterBar/FilterBar";
 
 const Body = () => {
   return (
-    <MainContentContainer>
-      <CardContainer />
-      <DataContainer />
-    </MainContentContainer>
+    <AllBody>
+      <HeaderMain>
+        <FilterBar />
+      </HeaderMain>
+      
+      <MainContentContainer>
+        <CardContainer />
+        <DataContainer />
+      </MainContentContainer>
+    </AllBody>
   );
 };
 
