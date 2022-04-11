@@ -14,6 +14,9 @@ import Notifications from './components/Header/Notifications';
 import data from './mockData/mockData.json';
 import Header from "./components/Header/Header";
 import Body from './components/MainContent/MainContent';
+import BasicDatePicker from "./components/DatrPicker/DatePicker";
+import FilterBar from "./components/FilterBar/FilterBar";
+
 
 const name = data.articles[0].source.name;
 const title = data.articles[0].title;

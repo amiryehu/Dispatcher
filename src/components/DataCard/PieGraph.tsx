@@ -18,6 +18,7 @@ const PieGraph = (props: IPieGraph) => {
     pieColors.gray,
   ];
 
+  
   const renderGraphColors = () => {
     return data.map((entry, index) => (
       <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
