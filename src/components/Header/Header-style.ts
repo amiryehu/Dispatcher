@@ -15,7 +15,7 @@ export const LeftSide = styled.div`
     display: flex;
     justify-content: space-between;
     align-items: center;
-    gap: 110px;
+    gap: 100px;
 `;
 
 export const RightSide = styled.div`
