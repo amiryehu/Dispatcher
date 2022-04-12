@@ -26,6 +26,7 @@ export const StyledButton = styled.button`
   &.textButton {
     background: ${colors.white};
     color: ${colors.darkGray};
+    width: auto;
     &:hover {
       background: ${colors.gray} 30%;
     }

@@ -4,19 +4,21 @@ import { colors, cardrRadius, cardShadow } from "../../Utils/Constances";
 
 export const RecentSearchesContainer = styled.div`
     font-family: 'Roboto';
-    height: 22vh;
+    max-height: 22vh;
+    min-height: 18vh;
     width: 623px;
     display: flex;
     gap: 20px;
     padding: 10px;
-    transition: 500ms;
     flex-direction: column;
     color: ${colors.darkGray};
     box-shadow: ${cardShadow};
     border-radius: ${cardrRadius};
     background-color: ${colors.white};
+    overflow: scroll;
 `
-export const RdecentHeader = styled.div`
+
+export const  RecentSearchesTitleAndBtn = styled.div`
     width: 100%;
     height: 15px;
     display: flex;
@@ -24,12 +26,16 @@ export const RdecentHeader = styled.div`
     font-weight: 700;
     align-items: center;
     justify-content: space-between;
-    `
-export const ClearButton = styled.div``
+`
+export const ClearButton = styled.button`
+    border: none;
+    font-weight: 700;
+    color: ${colors.darkGray};
+    background-color: ${colors.white};
+`
 
 export const RdecentBody = styled.div`
     width: 100%;
-    height: 120px;
     display: flex;
     font-size: 0.65rem;
     font-weight: 400;
