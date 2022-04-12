@@ -3,6 +3,10 @@ import { RecentSearchesContainer, RecentSearchesTitleAndBtn, ClearButton, Rdecen
 import ExitIcon from '../../assets/Icons/exit.svg';
 import Button from "../Button/Button";
 import {buttonType} from '../../Utils/Constances';
+import { store } from "../../store/store";
+
+const btnText = "CLEAR";
+const recentSearches = "RECENT SEARCHES";
 
 const RecentSearches = () => {
 
@@ -28,8 +32,8 @@ const RecentSearches = () => {
 
         <RecentSearchesContainer>
             <RecentSearchesTitleAndBtn>
-                 RECENT SEARCHES
-                <Button className={buttonType.textButton} btnText="CLEAR" ></Button>
+                 {recentSearches}
+                <Button className={buttonType.textButton} btnText={btnText} ></Button>
             </RecentSearchesTitleAndBtn>
             
             <RdecentBody>

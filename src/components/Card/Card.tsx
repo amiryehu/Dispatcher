@@ -3,21 +3,22 @@ import Button from "../Button/Button";
 import { buttonType } from "../../Utils/Constances";
 import {  CardWrapper,  CardImg,  ArticleHeader,  Tags,  ArticleBody,  ArticleContent,  CardContent, ButtonContainer} from "./Card-style";
 import { formattingDate } from "../../Utils/DateConvert";
+import { ICard } from "../../Utils/Types";
+import { store } from "../../store/store";
 
-type ICard = {
-  name: string;
-  title: string;
-  description: string;
-  url: string;
-  urlToImage: string;
-  publishedAt: string;
-};
+
+interface Icard{
+  article:ICard;
+}
 
 const btnText = "NAVIGATE TO DISPATCH";
 
-const Card = (props: ICard) => {
+const Card = ({article}:Icard) => {
+  console.log(store.getState())
+  
+  const {urlToImage, publishedAt, title, source, description} = article;
+  const {id, name} = source;
 
-  const {urlToImage, publishedAt, title, name, description /*tags?*/} = props;
   return (
     <CardWrapper>
 

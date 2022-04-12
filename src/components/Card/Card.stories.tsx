@@ -20,5 +20,5 @@ const Template: ComponentStory<typeof Card> = (args) => (
     <Card {...args}></Card>
 )
 
-export const articleCard = Template.bind({});
-articleCard.args = {urlToImage, publishedAt, title, name, description, url};
+// export const articleCard = Template.bind({});
+// articleCard.args = {urlToImage, publishedAt, title, name, description, url};
