@@ -1,11 +1,11 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
 const initialState = {
-  Country:"amir",
+  Country:"",
   Category:"",
   Sources:"",
   SortBy:"",
-  Dates:"",     //from - to?
+  Dates:"",     //from - to? ["Date" , "Date"]
   Language:"",
   Endpoint:""
 }
@@ -15,7 +15,7 @@ const filtersSlice = createSlice({
     name: 'filters',
     initialState,
     reducers: {
-
+  
     },
     extraReducers:{}
   })

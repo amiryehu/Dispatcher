@@ -4,6 +4,9 @@ import styled from "styled-components";
 export const cardrRadius = "14px";
 export const cardShadow = "0px 32px 64px 0px #0000000D";
 
+export const APIkey1 = "7bbfbb31ef804474a7a47e2accd310ac";
+
+
 export const colors = {
   darkBlue: "#262146",
   darkGray: "#5A5A89",
