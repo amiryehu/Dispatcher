@@ -14,7 +14,7 @@ interface Icard{
 const btnText = "NAVIGATE TO DISPATCH";
 
 const Card = ({article}:Icard) => {
-  console.log(store.getState())
+  // console.log(store.getState())
   
   const {urlToImage, publishedAt, title, source, description} = article;
   const {id, name} = source;

@@ -6,9 +6,9 @@ import {buttonType} from '../../Utils/Constances';
 import { store } from "../../store/store";
 
 const btnText = "CLEAR";
-const recentSearches = "RECENT SEARCHES";
 
 const RecentSearches = () => {
+    const recentSearches = "RECENT SEARCHES";
 
     const recentSearch = ['amir', 'yehuda', 'ofek', 'amir', 'yehuda', 'ofek', 'amir', 'yehuda', 'ofek', 'amir', 'yehuda', 'ofek'];
 

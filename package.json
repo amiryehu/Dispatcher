@@ -84,6 +84,8 @@
     "@types/chart.js": "^2.9.28",
     "@types/react-datepicker": "^4.4.0",
     "@types/styled-components": "^5.1.24",
-    "webpack": "^5.70.0"
+    "dotenv": "^16.0.0",
+    "webpack": "^5.72.0",
+    "webpack-cli": "^4.9.2"
   }
 }
