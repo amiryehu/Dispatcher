@@ -16,5 +16,5 @@ const Template: ComponentStory<typeof RecentSearches> = () => (
     <RecentSearches/>
 )
 
-export const FilterContainer = Template.bind({});
-FilterContainer.args = {};
+export const RecentSearche = Template.bind({});
+RecentSearche.args = {};

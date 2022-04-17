@@ -6,6 +6,11 @@ import Select, { SelectChangeEvent, SelectProps } from "@mui/material/Select";
 import { FilterWrapper, boxStyle, selectStyle } from "./Filter-style";
 import { ReactComponent as DropDownIcon } from "../../assets/Icons/dropdown.svg";
 import { useState } from "react";
+// import {IFilter} from '../../Utils/Types';
+
+// interface Ifilter{
+//   props:IFilter;
+// }
 
 interface IFilter {
   title: string,
