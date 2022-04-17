@@ -12,7 +12,7 @@ const CardContainer = () => {
   const dispatch = useAppDispatch();
   
   useEffect(()=>{
-    dispatch(fetchFromApi(`${EVERYTHING_STRING}` + `${API_KEY}`));
+    dispatch(fetchFromApi(EVERYTHING_STRING + API_KEY));
   },[])
   
   const articles = useAppSelector(state => state.apiResponse.articles);
