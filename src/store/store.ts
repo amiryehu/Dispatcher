@@ -5,7 +5,7 @@ import filtersSlice from './reducers/filterReducer';
 
 export const store = configureStore({
   reducer: {
-      apiResponse: articlesSlice,
+      apiArticlesResponse: articlesSlice,
       filters: filtersSlice,
   },
 })

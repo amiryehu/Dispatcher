@@ -2,7 +2,6 @@ import * as React from "react";
 import BasicSelect from "../Filter/Filter";
 import { FilterWrapper } from "../Filter/Filter-style";
 import Divider from "@mui/material/Divider";
-
 import { ReactComponent as SearchIcon } from "../../assets/Icons/search.svg";
 import {  SearchWrapper, FilterDividerWrapper, SearchContainer, textFieldStyle, searchIconStyle, dividerStyle} from "./Search-style";
 import { useState } from "react";
@@ -27,7 +26,7 @@ const SearchForm = () => {
         <FilterDividerWrapper>
           <Divider sx={{ ...dividerStyle }} orientation="vertical" />
           <BasicSelect
-            title="Everything"
+            title="Top Headlines"
             items={["Everything", "Top Headlines"]}
             isSearchFilter={true}
           />
