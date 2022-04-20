@@ -1,5 +1,4 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { stat } from "fs";
 
 const initialState = {
   Country:"",
@@ -17,7 +16,7 @@ const filtersSlice = createSlice({
     initialState,
     reducers: {
       setEndpoint: (state, action:PayloadAction<string>) => {
-        state.Endpoint = action.payload;
+        return {...initialState, Endpoint: action.payload};
       },
       setCountry: (state, action:PayloadAction<string>) => {
         state.Country = action.payload;

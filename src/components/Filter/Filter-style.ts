@@ -2,12 +2,12 @@ import styled from "styled-components";
 import { cardrRadius, colors } from "../../Utils/Constances";
 
 interface FilterWeapperProps{
-  isSearchFilter?: boolean
+  isEndpointFilter?: boolean
 }
 
 export const FilterWrapper = styled.div<FilterWeapperProps>`
   display: flex;
-  width: ${props => props.isSearchFilter? '145px' : '175px'};
+  width: ${props => props.isEndpointFilter? '145px' : '175px'};
 `;
 
 export const boxStyle = {

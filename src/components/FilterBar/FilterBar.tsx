@@ -2,34 +2,31 @@ import React from "react";
 import { FiltersBar } from "./FilterBar-style";
 import BasicSelect from "../Filter/Filter";
 import ChooseDate from "../DatrPicker/DatePicker";
-import {  COUNTRY,  CATEGORY,  SOURCES,  SORTBY,  DATES,  LANGUAGE,  ENDPOINT,  Endpoint,} from "../../store/Utils/storeConstances";
-import { store, useAppSelector } from "../../store/store";
+import { COUNTRY, CATEGORY, SOURCES, SORTBY, DATES, LANGUAGE, ENDPOINT, Endpoint,} from "../../store/Utils/storeConstances";
+import { useAppSelector } from "../../store/store";
 
 const FilterBar = () => {
   const storeEndPoint = useAppSelector((state) => state.filters.Endpoint);
 
-  const renderFiltersByEndpoint = (endpoint: string) => {
-    if (endpoint == Endpoint.TopHeadlines) {
-      return (
+  return (
+    <div>
+      {storeEndPoint == Endpoint.TopHeadlines && (
         <FiltersBar>
-          <BasicSelect title={COUNTRY} items={["a", "b"]} />
+          <BasicSelect title={COUNTRY} items={["asd", "auu"]} />
           <BasicSelect title={CATEGORY} items={["a", "b"]} />
           <BasicSelect title={SOURCES} items={["a", "b"]} />
         </FiltersBar>
-      );
-    } else {
-      return (
+      )}
+      {(storeEndPoint == Endpoint.Everything) && (
         <FiltersBar>
-          <BasicSelect title={SORTBY} items={["a", "b"]} />
+          <BasicSelect title={SORTBY} items={["popo", "rel"]} />
           <ChooseDate />
           <BasicSelect title={SOURCES} items={["a", "b"]} />
           <BasicSelect title={LANGUAGE} items={["a", "b"]} />
         </FiltersBar>
-      );
-    }
-  };
-
-  return renderFiltersByEndpoint(storeEndPoint);
+      )}
+    </div>
+  );
 };
 
 export default FilterBar;

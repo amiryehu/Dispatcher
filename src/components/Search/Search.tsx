@@ -28,7 +28,7 @@ const SearchForm = () => {
           <BasicSelect
             title="Top Headlines"
             items={["Everything", "Top Headlines"]}
-            isSearchFilter={true}
+            isEndpointFilter={true}
           />
         </FilterDividerWrapper>
     </SearchContainer>
