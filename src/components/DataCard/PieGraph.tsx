@@ -31,6 +31,7 @@ const PieGraph = (props: IPieGraph) => {
       <PieItem
         title={data[index].name}
         itemColor={COLORS[index % COLORS.length]}
+        key={index}
       />
     ));
   };
