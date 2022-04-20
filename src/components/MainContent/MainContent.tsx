@@ -7,14 +7,12 @@ import { useAppSelector } from "../../store/store";
 
 const Body = () => {
   const totalResults = useAppSelector(state => state.apiArticlesResponse.totalResults);
-  const displayTotalResults = () => {
-    return `${totalResults} Total results`
-  }
+
   return (
     <AllBody>
       <HeaderMain>
         <FilterBar />
-        <TotalResults>{displayTotalResults()}</TotalResults>
+        <TotalResults>{`${totalResults} Total results`}</TotalResults>
       </HeaderMain>
       
       <MainContentContainer>

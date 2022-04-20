@@ -2,30 +2,31 @@ import * as React from "react";
 import Box from "@mui/material/Box";
 import MenuItem from "@mui/material/MenuItem";
 import FormControl from "@mui/material/FormControl";
-import Select, { SelectChangeEvent, SelectProps } from "@mui/material/Select";
+import Select, { SelectChangeEvent } from "@mui/material/Select";
 import { FilterWrapper, boxStyle, selectStyle } from "./Filter-style";
 import { ReactComponent as DropDownIcon } from "../../assets/Icons/dropdown.svg";
 import { useEffect, useState } from "react";
-import { EVERYTHING_URL, TOP_HEADLINES_URL, COUNTRY, CATEGORY, SOURCES, SORTBY, DATES, LANGUAGE, ENDPOINT, Endpoint } from "../../store/Utils/storeConstances";
-import { store } from "../../store/store";
+import { COUNTRY, CATEGORY, SOURCES, SORTBY, DATES, LANGUAGE, ENDPOINT, Endpoint } from "../../store/Utils/storeConstances";
 import {filtersActions} from "../../store/reducers/filterReducer"
+import { useAppDispatch } from "../../store/store";
 
 interface IFilter {
   title: string,
   items: string[],
-  isSearchFilter?: boolean,
+  isEndpointFilter?: boolean,
   onChange?: () => void,
 }
 
 export default function BasicSelect(props: IFilter) {
-  const { title, items, isSearchFilter } = props;
-  const [selectedItem, setSelectedItem] = useState("");
+  const { title, items, isEndpointFilter } = props;
+  const dispatch = useAppDispatch();
 
-  useEffect(()=>{
-    if(isSearchFilter){
-      setSelectedItem(()=> Endpoint.TopHeadlines);
-    }
-  },[])
+  const IsEndPointOrRegularFilter = (isEndpoint:boolean | undefined):string => {
+    if (isEndpoint) return Endpoint.TopHeadlines;
+    return "";
+  }
+
+  const [selectedItem, setSelectedItem] = useState(IsEndPointOrRegularFilter(isEndpointFilter));
 
   const handleChange = (event: SelectChangeEvent) => {
     setSelectedItem(event.target.value as string);
@@ -38,37 +39,35 @@ export default function BasicSelect(props: IFilter) {
   useEffect(()=>{
     switch (title){
       case Endpoint.Everything: {
-        store.dispatch(filtersActions.setEndpoint(selectedItem));
+        dispatch(filtersActions.setEndpoint(selectedItem));
         break;
       }
       case Endpoint.TopHeadlines: {
-        store.dispatch(filtersActions.setEndpoint(selectedItem));
-        console.log("title:",title,"selected",selectedItem)
+        dispatch(filtersActions.setEndpoint(selectedItem));
         break;
       }
       case COUNTRY: {
-        store.dispatch(filtersActions.setCountry(selectedItem));
-        console.log("title:",title,"selected",selectedItem)
+        dispatch(filtersActions.setCountry(selectedItem));
         break;
       }
       case CATEGORY: {
-        store.dispatch(filtersActions.setCategory(selectedItem));
+        dispatch(filtersActions.setCategory(selectedItem));
         break;
       }
       case SOURCES: {
-        store.dispatch(filtersActions.setSources(selectedItem));
+        dispatch(filtersActions.setSources(selectedItem));
         break;
       }
       case SORTBY: {
-        store.dispatch(filtersActions.setSortBy(selectedItem));
+        dispatch(filtersActions.setSortBy(selectedItem));
         break;
       }
       case DATES: {
-        store.dispatch(filtersActions.setDates(selectedItem));
+        dispatch(filtersActions.setDates(selectedItem));
         break;
       }
       case LANGUAGE: {
-        store.dispatch(filtersActions.setLanguage(selectedItem));
+        dispatch(filtersActions.setLanguage(selectedItem));
         break;
       }
     }
@@ -76,7 +75,7 @@ export default function BasicSelect(props: IFilter) {
 
 
   return (
-    <FilterWrapper isSearchFilter={isSearchFilter}>
+    <FilterWrapper isEndpointFilter={isEndpointFilter}>
       <Box sx={{ ...boxStyle }}>
         <FormControl fullWidth focused={false}>
           <Select
@@ -84,9 +83,16 @@ export default function BasicSelect(props: IFilter) {
             onChange={handleChange}
             sx={{ ...selectStyle }}
             value={selectedItem}
+            renderValue={(value) => {
+              if (value.length === 0) {
+                return <em>{title}</em>;
+              } else {
+                return <em>{selectedItem}</em>;
+              }
+            }}
             IconComponent={DropDownIcon}
             >
-            {!isSearchFilter && <MenuItem value="">{title}</MenuItem> }
+            {!isEndpointFilter && <MenuItem value="">{title}</MenuItem>}
             {handleMenuItem()}
           </Select>
         </FormControl>
