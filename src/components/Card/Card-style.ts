@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { colors, cardrRadius } from "../../Utils/Constances";
+import { colors, cardrRadius, screenSize } from "../../Utils/Constances";
 
 export const CardWrapper = styled.div`
   display: flex;
@@ -10,6 +10,10 @@ export const CardWrapper = styled.div`
   background: ${colors.white};
   align-items: center;
   font-style: "normal";
+  @media screen and (max-width: ${screenSize.tablet}) {
+    width: 100%;
+    transition-duration: 500ms;
+  }
 `;
 
 export const CardImg = styled.img`

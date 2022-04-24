@@ -1,6 +1,7 @@
 import React from "react";
 import { PieChart, Pie, Cell, ResponsiveContainer } from "recharts";
 import { pieColors } from "../../Utils/Constances";
+import { PieAndPieItems } from "./DataCard-style";
 import PieItem from "./PieItem";
 
 type IPieGraph = {
@@ -37,7 +38,7 @@ const PieGraph = (props: IPieGraph) => {
   };
 
   return (
-    <>
+    <PieAndPieItems>
       <ResponsiveContainer width="100%" height="50%">
         <PieChart width={400} height={400}>
           <Pie data={data} innerRadius={60} outerRadius={70} dataKey="value">
@@ -46,7 +47,7 @@ const PieGraph = (props: IPieGraph) => {
         </PieChart>
       </ResponsiveContainer>
       {renderPieItem()}
-    </>
+    </PieAndPieItems>
   );
 };
 

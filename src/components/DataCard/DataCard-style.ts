@@ -6,7 +6,8 @@ export const DataCardContainer = styled.div`
   display: flex;
   flex-direction: column;
   width: 100%;
-  height: 45vh;
+  min-width: 200px;
+  height: 44vh;
   border: solid ${colors.gray} 1px;
   font-size: 1.5rem;
   border-radius: ${cardrRadius};
@@ -20,12 +21,18 @@ export const DataCardHeader = styled.div`
   color: ${colors.black};
   margin-top: 15px;
   margin-left: 15px;
-  margin-bottom: 40px;
+  margin-bottom: 1vh;
   display: flex;
   justify-content: flex-start;
   align-items: flex-start;
   flex-direction: column;
   gap: 9px;
+`;
+
+export const PieAndPieItems = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 `;
 
 export const DataContent = styled.div`

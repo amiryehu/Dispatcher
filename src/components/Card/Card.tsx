@@ -14,9 +14,8 @@ interface Icard{
 const btnText = "NAVIGATE TO DISPATCH";
 
 const Card = ({article}:Icard) => {
-  // console.log(store.getState())
   
-  const {urlToImage, publishedAt, title, source, description} = article;
+  const {urlToImage, publishedAt, title, source, description, author, url} = article;
   const {id, name} = source;
 
   return (
@@ -37,7 +36,7 @@ const Card = ({article}:Icard) => {
           </ArticleBody>
         </div>
         <ButtonContainer>
-          <Button className={buttonType.primary} btnText={btnText}></Button>
+          <Button className={buttonType.primary} btnText={btnText} articleUrl={url}></Button>
         </ButtonContainer>
       </CardContent>
 
