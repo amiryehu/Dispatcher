@@ -19,10 +19,3 @@ export interface APIresponse {
   status: string,
   totalResults: number,
 }
-
-// export interface IFilter {
-//   title: string,
-//   items: string[],
-//   isSearchFilter?: boolean,
-//   onChange?: () => void,
-// }

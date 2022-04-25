@@ -8,7 +8,7 @@ interface ColorItemProps {
 export const PieItemStyle = styled.div`
   width: 80%;
   height: 30px;
-  margin-bottom: 10px;
+  margin-bottom: 7px;
   font-size: 1.15rem;
   color: ${pieColors.black};
   display: flex;

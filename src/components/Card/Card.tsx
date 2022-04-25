@@ -18,6 +18,11 @@ const Card = ({article}:Icard) => {
   const {urlToImage, publishedAt, title, source, description, author, url} = article;
   const {id, name} = source;
 
+  const openArticleInNewTab = (): void => {
+    const newWindow = window.open(url, '_blank', 'noopener,noreferrer')
+    if (newWindow) newWindow.opener = null
+  }
+
   return (
     <CardWrapper>
 
@@ -36,7 +41,7 @@ const Card = ({article}:Icard) => {
           </ArticleBody>
         </div>
         <ButtonContainer>
-          <Button className={buttonType.primary} btnText={btnText} articleUrl={url}></Button>
+          <Button className={buttonType.primary} btnText={btnText} onClick={openArticleInNewTab}></Button>
         </ButtonContainer>
       </CardContent>
 

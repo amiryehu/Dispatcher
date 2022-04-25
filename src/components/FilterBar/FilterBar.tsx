@@ -1,13 +1,14 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { FiltersBar } from "./FilterBar-style";
 import BasicSelect from "../Filter/Filter";
 import ChooseDate from "../DatrPicker/DatePicker";
 import { COUNTRY, CATEGORY, SOURCES, SORTBY, DATES, LANGUAGE, ENDPOINT, Endpoint,} from "../../store/Utils/storeConstances";
-import { useAppSelector } from "../../store/store";
+import { useAppDispatch, useAppSelector } from "../../store/store";
 import { Countries, Languages, Sources, Category, SortBy } from "../../store/Utils/filtersData";
 
 const FilterBar = () => {
   const storeEndPoint = useAppSelector((state) => state.filters.Endpoint);
+
   return (
     <div>
       {storeEndPoint == Endpoint.TopHeadlines && (

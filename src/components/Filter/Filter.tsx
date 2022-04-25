@@ -25,18 +25,18 @@ export default function BasicSelect(props: IFilter) {
   const dispatch = useAppDispatch();
   const filterState = useAppSelector(state=>state.filters);
 
-  const IsEndPointOrRegularFilter = (isEndpoint:boolean | undefined):string => {
+  const initByFilterType = (isEndpoint:boolean | undefined):string => {
     if (isEndpoint) return Endpoint.TopHeadlines;
     return "";
   }
 
   useEffect(()=>{
     if (filterState[title as TitlesOptions] === ""){
-      setSelectedItem(()=>"")
+      setSelectedItem(()=>"") //clean selected value
     }
   },[filterState[title as TitlesOptions]])
 
-  const [selectedItem, setSelectedItem] = useState(()=>IsEndPointOrRegularFilter(isEndpointFilter));
+  const [selectedItem, setSelectedItem] = useState(()=>initByFilterType(isEndpointFilter));
 
   const handleChange = (event: SelectChangeEvent) => {
     let key = event.target.value as string;
@@ -103,7 +103,6 @@ export default function BasicSelect(props: IFilter) {
               if (value === "") {
                 return <em>{title}</em>;
               } else {
-                console.log(selectedItem)
                 return <em>{selectedItem}</em>;
               }
             }}

@@ -10,6 +10,7 @@ type IPieGraph = {
 
 const PieGraph = (props: IPieGraph) => {
   const { data } = props;
+  let sum = 0;
 
   const COLORS = [
     pieColors.black,
@@ -32,6 +33,7 @@ const PieGraph = (props: IPieGraph) => {
       <PieItem
         title={data[index].name}
         itemColor={COLORS[index % COLORS.length]}
+        percentage={data[index].value}
         key={index}
       />
     ));

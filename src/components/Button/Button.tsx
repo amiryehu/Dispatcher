@@ -4,19 +4,14 @@ import { StyledButton } from "./Button-style";
 interface IButton {
   btnText: string,
   className: string,
-  articleUrl?: string
+  onClick?: ()=> void
   // arrowIconIsShow: boolean
  }
 
 const Button = (props: IButton) => {
-  const {className, btnText, articleUrl} = props;
+  const {className, btnText, onClick} = props;
 
-  const openArticleInNewTab = (): void => {
-    const newWindow = window.open(articleUrl, '_blank', 'noopener,noreferrer')
-    if (newWindow) newWindow.opener = null
-  }
-
-  return <StyledButton className={className} onClick={openArticleInNewTab}>{btnText}</StyledButton>;
+  return <StyledButton className={className} onClick={onClick}>{btnText}</StyledButton>;
 };
 
 export default Button;

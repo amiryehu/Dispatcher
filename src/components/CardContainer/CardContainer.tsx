@@ -9,33 +9,12 @@ import {
   EVERYTHING_URL,
   TOP_HEADLINES_URL,
 } from "../../store/Utils/storeConstances";
-import { filtersActions } from "../../store/reducers/filterReducer";
 
 const CardContainer = () => {
   let url = "";
   const dispatch = useAppDispatch();
   const filtersState = useAppSelector((state: RootState) => state.filters);
   const articles = useAppSelector((state: RootState) => state.apiArticlesResponse.articles);
-
-
-
-  useEffect(() => {
-    fetch('https://ipapi.co/json/')
-    .then( res => res.json())
-    .then(response => {
-      if(filtersState.Endpoint === Endpoint.TopHeadlines){
-        const countryName = response.country_name;
-        const currentLocation = response.country_code.toLowerCase();
-
-        dispatch(filtersActions.setCountry(currentLocation));
-        dispatch(filtersActions.setCountryName(countryName));
-      }
-    })
-    .catch((data) => {
-      console.log('Request failed:', data);
-    });
-  },[filtersState.Endpoint])
-
 
 
   useEffect(() => {

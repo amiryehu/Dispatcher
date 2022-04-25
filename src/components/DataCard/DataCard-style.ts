@@ -7,7 +7,7 @@ export const DataCardContainer = styled.div`
   flex-direction: column;
   width: 100%;
   min-width: 200px;
-  height: 44vh;
+  height: 48vh;
   border: solid ${colors.gray} 1px;
   font-size: 1.5rem;
   border-radius: ${cardrRadius};

@@ -18,10 +18,10 @@ const SearchForm = () => {
   const handleFocusState = () => {setIsFocused((state)=> !state)}
   const valueInSearch = useAppSelector(state=>state.filters.valueInSearch);
   
-  const valueCangeInSearch = (event: React.ChangeEvent<HTMLInputElement>) => {
+  const onSearchChangeHandler = (event: React.ChangeEvent<HTMLInputElement>) => {
     dispatch(filtersActions.setIsSearchPressed(event.target.value));
   }
-  const debouncedCallback = debounce(valueCangeInSearch, 1000);
+  const debouncedCallback = debounce(onSearchChangeHandler, 300);
   
 
   return (

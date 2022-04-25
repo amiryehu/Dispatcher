@@ -1,6 +1,5 @@
 import { ActionTypes } from "@mui/base";
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { access, stat } from "fs";
 
 export const initialState = {
   Country: "",
@@ -20,7 +19,7 @@ const filtersSlice = createSlice({
   initialState,
   reducers: {
     setEndpoint(state, action: PayloadAction<string>) {
-        return { ...initialState, Endpoint: action.payload };
+      return { ...initialState, Endpoint: action.payload };
     },
     setCountry(state, action: PayloadAction<string>) {
       state.Country = action.payload;
@@ -51,7 +50,8 @@ const filtersSlice = createSlice({
       state.valueInSearch = action.payload;
     },
   },
-  extraReducers: {},
+  extraReducers: {
+  },
 });
 
 export type FilterActionsStrings =
