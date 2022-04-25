@@ -1,10 +1,11 @@
 import React from "react";
-import Logo  from "../../assets/Icons/logo.svg";
-import { HeaderWrapper, LeftSide, RightSide, logoStyle } from "./Header-style";
+import Logo from "../../assets/Icons/logo.svg";
+import { HeaderWrapper, LeftSide, RightSide, logoStyle, SearchAndRecentSearches } from "./Header-style";
 import Search from "../Search/Search";
 import Settings from "./Settings";
 import Notifications from "./Notifications";
 import Avatar from "../Avatar/Avatar";
+import RecentSearches from "../RecentSearches/RecentSearches";
 
 interface IHeader {}
 
@@ -13,8 +14,11 @@ const Header = (props: IHeader) => {
   return (
     <HeaderWrapper>
       <LeftSide>
-        <img src={Logo} style={logoStyle}/>
-        <Search />
+        <img src={Logo} style={logoStyle} />
+        <SearchAndRecentSearches>
+          {/* <RecentSearches /> */}
+          <Search />
+        </SearchAndRecentSearches>
       </LeftSide>
 
       <RightSide>

@@ -7,20 +7,34 @@ import {  SearchWrapper, FilterDividerWrapper, SearchContainer, textFieldStyle, 
 import { useState } from "react";
 import { TextField } from "@mui/material";
 import { style } from "@mui/system";
+import { useAppDispatch, useAppSelector } from "../../store/store";
+import debounce from 'lodash/debounce';
+import { filtersActions } from "../../store/reducers/filterReducer";
+
 
 const SearchForm = () => {
+  const dispatch = useAppDispatch();
   const [isFocused, setIsFocused] = useState(false);
   const handleFocusState = () => {setIsFocused((state)=> !state)}
+  const valueInSearch = useAppSelector(state=>state.filters.valueInSearch);
   
+  const onSearchChangeHandler = (event: React.ChangeEvent<HTMLInputElement>) => {
+    dispatch(filtersActions.setIsSearchPressed(event.target.value));
+  }
+  const debouncedCallback = debounce(onSearchChangeHandler, 300);
+  
+
   return (
     <SearchContainer isFocused={isFocused}>
         <SearchWrapper>
           <SearchIcon style={{ ...searchIconStyle }} />
           <TextField 
             placeholder="Search"
-            onClick={handleFocusState}
+            onFocus={handleFocusState}
             onBlur={handleFocusState}
-            sx={{ ...textFieldStyle }}/>
+            sx={{ ...textFieldStyle }}
+            onChange={debouncedCallback}
+            />
         </SearchWrapper>
 
         <FilterDividerWrapper>

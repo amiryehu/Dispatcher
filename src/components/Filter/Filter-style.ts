@@ -7,7 +7,7 @@ interface FilterWeapperProps{
 
 export const FilterWrapper = styled.div<FilterWeapperProps>`
   display: flex;
-  width: ${props => props.isEndpointFilter? '145px' : '175px'};
+  width: ${props => props.isEndpointFilter? '155px' : '175px'};
 `;
 
 export const boxStyle = {
@@ -23,6 +23,7 @@ export const boxStyle = {
 export const selectStyle = {
   color: `${colors.darkGray}`,
   borderRadius: `${cardrRadius}`,
+  maxHeight: "300px",
   border: "0px",
   "&:hover .MuiOutlinedInput-notchedOutline": {
     border: "0px",

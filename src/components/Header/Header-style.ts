@@ -12,15 +12,22 @@ export const HeaderWrapper = styled.div`
 `;
 
 export const LeftSide = styled.div`
+    width: 50%;
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    gap: 100px;
+`;
+
+export const SearchAndRecentSearches = styled.div`
+    display: flex;
+    position: absolute;
+    margin-left: 8%;
+    flex-direction: column;
 `;
 
 export const RightSide = styled.div`
+    width: 50%;
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-end;
     align-items: center;
     margin-right: 15px;
 `;

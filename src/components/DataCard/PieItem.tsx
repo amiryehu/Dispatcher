@@ -4,12 +4,13 @@ import { Circle, PieItemStyle, Percentage, TitleAndMark } from "./PieItem-style"
 interface IPieItem {
   title: string;
   itemColor: string;
+  percentage: number;
 }
 
 
 
 const PieItem = (props: IPieItem) => {
-  const { title, itemColor } = props;
+  const { title, itemColor,percentage } = props;
 
   return (
     <PieItemStyle>
@@ -17,7 +18,7 @@ const PieItem = (props: IPieItem) => {
         <Circle color={itemColor} />
         {title}
       </TitleAndMark>
-      <Percentage>%15</Percentage>
+      <Percentage>{`${percentage}%`}</Percentage>
     </PieItemStyle>
   );
 };

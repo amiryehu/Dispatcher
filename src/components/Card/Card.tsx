@@ -14,10 +14,14 @@ interface Icard{
 const btnText = "NAVIGATE TO DISPATCH";
 
 const Card = ({article}:Icard) => {
-  // console.log(store.getState())
   
-  const {urlToImage, publishedAt, title, source, description} = article;
+  const {urlToImage, publishedAt, title, source, description, author, url} = article;
   const {id, name} = source;
+
+  const openArticleInNewTab = (): void => {
+    const newWindow = window.open(url, '_blank', 'noopener,noreferrer')
+    if (newWindow) newWindow.opener = null
+  }
 
   return (
     <CardWrapper>
@@ -37,7 +41,7 @@ const Card = ({article}:Icard) => {
           </ArticleBody>
         </div>
         <ButtonContainer>
-          <Button className={buttonType.primary} btnText={btnText}></Button>
+          <Button className={buttonType.primary} btnText={btnText} onClick={openArticleInNewTab}></Button>
         </ButtonContainer>
       </CardContent>
 

@@ -12,6 +12,7 @@ export const SearchContainer = styled.div<IPaperWrapperProps>`
   justify-content: space-between;
   height: 57px;
   padding-left: 15px;
+  margin-left: 11%;
   border-radius: 10px;
   color: rgba(0, 0, 0, 0.87);
   background-color: ${colors.white};

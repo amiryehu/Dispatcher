@@ -7,8 +7,10 @@ import { FilterWrapper, boxStyle, selectStyle } from "./Filter-style";
 import { ReactComponent as DropDownIcon } from "../../assets/Icons/dropdown.svg";
 import { useEffect, useState } from "react";
 import { COUNTRY, CATEGORY, SOURCES, SORTBY, DATES, LANGUAGE, ENDPOINT, Endpoint } from "../../store/Utils/storeConstances";
-import {filtersActions} from "../../store/reducers/filterReducer"
-import { useAppDispatch } from "../../store/store";
+import { Countries, Category, Sources, Languages, SortBy, CountriesOptions, LanguagesOptions, CategoriesOptions, SourcesOptions, SortByOptions, EndpointsOptions } from "../../store/Utils/filtersData";
+import { useAppDispatch, useAppSelector } from "../../store/store";
+import {TitlesOptions} from "../../store/Utils/filtersData";
+import {filtersActions} from "../../store/reducers/filterReducer";
 
 interface IFilter {
   title: string,
@@ -17,19 +19,28 @@ interface IFilter {
   onChange?: () => void,
 }
 
+
 export default function BasicSelect(props: IFilter) {
   const { title, items, isEndpointFilter } = props;
   const dispatch = useAppDispatch();
+  const filterState = useAppSelector(state=>state.filters);
 
-  const IsEndPointOrRegularFilter = (isEndpoint:boolean | undefined):string => {
+  const initByFilterType = (isEndpoint:boolean | undefined):string => {
     if (isEndpoint) return Endpoint.TopHeadlines;
     return "";
   }
 
-  const [selectedItem, setSelectedItem] = useState(IsEndPointOrRegularFilter(isEndpointFilter));
+  useEffect(()=>{
+    if (filterState[title as TitlesOptions] === ""){
+      setSelectedItem(()=>"") //clean selected value
+    }
+  },[filterState[title as TitlesOptions]])
+
+  const [selectedItem, setSelectedItem] = useState(()=>initByFilterType(isEndpointFilter));
 
   const handleChange = (event: SelectChangeEvent) => {
-    setSelectedItem(event.target.value as string);
+    let key = event.target.value as string;
+    setSelectedItem(()=>key);
   };
 
   const handleMenuItem = () => {
@@ -37,6 +48,7 @@ export default function BasicSelect(props: IFilter) {
   };
 
   useEffect(()=>{
+    if(!selectedItem)return;
     switch (title){
       case Endpoint.Everything: {
         dispatch(filtersActions.setEndpoint(selectedItem));
@@ -47,19 +59,19 @@ export default function BasicSelect(props: IFilter) {
         break;
       }
       case COUNTRY: {
-        dispatch(filtersActions.setCountry(selectedItem));
+        dispatch(filtersActions.setCountry(Countries[selectedItem as CountriesOptions]));
         break;
       }
       case CATEGORY: {
-        dispatch(filtersActions.setCategory(selectedItem));
+        dispatch(filtersActions.setCategory(Category[selectedItem as CategoriesOptions]));
         break;
       }
       case SOURCES: {
-        dispatch(filtersActions.setSources(selectedItem));
+        dispatch(filtersActions.setSources(Sources[selectedItem as SourcesOptions]));
         break;
       }
       case SORTBY: {
-        dispatch(filtersActions.setSortBy(selectedItem));
+        dispatch(filtersActions.setSortBy(SortBy[selectedItem as SortByOptions]));
         break;
       }
       case DATES: {
@@ -67,11 +79,12 @@ export default function BasicSelect(props: IFilter) {
         break;
       }
       case LANGUAGE: {
-        dispatch(filtersActions.setLanguage(selectedItem));
+        dispatch(filtersActions.setLanguage(Languages[selectedItem as LanguagesOptions]));
         break;
       }
     }
   }, [selectedItem])
+
 
 
   return (
@@ -79,12 +92,15 @@ export default function BasicSelect(props: IFilter) {
       <Box sx={{ ...boxStyle }}>
         <FormControl fullWidth focused={false}>
           <Select
+            MenuProps={{
+              PaperProps:{sx:{maxHeight:'170px'}}
+            }}
             displayEmpty
-            onChange={handleChange}
-            sx={{ ...selectStyle }}
             value={selectedItem}
+            onChange={handleChange} 
+            sx={{ ...selectStyle }}
             renderValue={(value) => {
-              if (value.length === 0) {
+              if (value === "") {
                 return <em>{title}</em>;
               } else {
                 return <em>{selectedItem}</em>;
