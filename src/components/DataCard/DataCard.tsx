@@ -12,6 +12,7 @@ import chartImg from "../../assets/Icons/chart.svg";
 import LineGraph from "./LineGraph";
 import PieGraph from "./PieGraph";
 import Articles from "../../mockData/mockData.json";
+import { useAppSelector } from "../../store/store";
 
 type IDataCard = {
   title: string,
@@ -25,9 +26,10 @@ enum types {
 
 const DataCard = (props: IDataCard) => {
   const { title, type } = props;
+  const articles = useAppSelector(state=>state.apiArticlesResponse.articles)
   
   // arranged data
-  const articles = Articles.articles ;
+  const a  = Articles.articles ;
   let sumOfArticles = 0;
   const sourceCounter: { [key: string]: number } = {};
   const sortedSource: { name: string; value: number }[] = [];

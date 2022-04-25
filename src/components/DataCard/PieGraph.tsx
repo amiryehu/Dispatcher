@@ -13,27 +13,28 @@ const PieGraph = (props: IPieGraph) => {
   let sum = 0;
 
   const COLORS = [
-    pieColors.black,
     pieColors.orange,
     pieColors.lightAzure,
-    pieColors.darkBlue,
+    pieColors.black,
     pieColors.gray,
+    pieColors.darkBlue,
   ];
 
-  
+  const fiveColors = data.slice(0, 5);
   const renderGraphColors = () => {
-    return data.map((entry, index) => (
+    return fiveColors.map((entry, index) => (
       <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
     ));
   };
+  console.log(fiveColors);
 
   const renderPieItem = () => {
-    const fourElement = data.slice(0, 4);
-    return fourElement.map((entry, index) => (
+    const fiveElement = data.slice(0, 4);
+    return fiveElement.map((entry, index) => (
       <PieItem
-        title={data[index].name}
+        title={fiveElement[index].name}
         itemColor={COLORS[index % COLORS.length]}
-        percentage={data[index].value}
+        percentage={fiveElement[index].value}
         key={index}
       />
     ));
@@ -43,7 +44,7 @@ const PieGraph = (props: IPieGraph) => {
     <PieAndPieItems>
       <ResponsiveContainer width="100%" height="50%">
         <PieChart width={400} height={400}>
-          <Pie data={data} innerRadius={60} outerRadius={70} dataKey="value">
+          <Pie data={fiveColors} innerRadius={60} outerRadius={70} dataKey="value">
             {renderGraphColors()}
           </Pie>
         </PieChart>

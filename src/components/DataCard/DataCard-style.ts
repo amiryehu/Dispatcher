@@ -24,7 +24,6 @@ export const DataCardHeader = styled.div`
   margin-bottom: 1vh;
   display: flex;
   justify-content: flex-start;
-  align-items: flex-start;
   flex-direction: column;
   gap: 9px;
 `;
