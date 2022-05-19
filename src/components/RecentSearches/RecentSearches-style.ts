@@ -15,7 +15,12 @@ export const RecentSearchesContainer = styled.div`
     box-shadow: ${cardShadow};
     border-radius: ${cardrRadius};
     background-color: ${colors.white};
+    z-index: 1;
     overflow: scroll;
+    position: absolute;
+    margin-top: 4px;
+    margin-left: 3rem;
+    transition-duration: 500ms;
 `
 
 export const  RecentSearchesTitleAndBtn = styled.div`

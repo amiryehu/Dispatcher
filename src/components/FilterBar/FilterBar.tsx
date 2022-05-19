@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { FiltersBar } from "./FilterBar-style";
 import BasicSelect from "../Filter/Filter";
 import ChooseDate from "../DatrPicker/DatePicker";
@@ -8,6 +8,32 @@ import { Countries, Languages, Sources, Category, SortBy } from "../../store/Uti
 
 const FilterBar = () => {
   const storeEndPoint = useAppSelector((state) => state.filters.Endpoint);
+  const filterState = useAppSelector(state=>state.filters);
+  const [sourceDisable, setSourceDisable] = useState(false);
+  const [categoryDisable, setCategoryDisable] = useState(false);
+  const [countryDisable, setCountryDisable] = useState(false);
+
+  
+
+  useEffect(()=>{
+    if(filterState.Category !== "" || (filterState.Country !== "" && filterState.Country === "Israel")){
+      setSourceDisable(true);
+    }else{
+      setSourceDisable(false);
+    }
+  },[filterState.Category, filterState.Country])
+
+
+  useEffect(()=>{
+    if(filterState.Sources !== ""){
+      setCategoryDisable(true); 
+      setCountryDisable(true);
+    } else {
+      setCategoryDisable(false); 
+      setCountryDisable(false);
+    }
+  },[filterState.Sources])
+
 
   return (
     <div>

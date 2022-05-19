@@ -13,12 +13,12 @@ export const Countries = {
   China: "cn",
   Colombia: "co",
   Cuba: "cu",
-  Czech_Republic: "cz",
+  'Czech Republic': "cz",
   Egypt: "eg",
   France: "fr",
   Germany: "de",
   Greece: "gr",
-  Hong_Kong: "hk",
+  'Hong Kong': "hk",
   Hungary: "hu",
   India: "in",
   Indonesia: "id",
@@ -32,7 +32,7 @@ export const Countries = {
   Mexico: "mx",
   Morocco: "ma",
   Netherlands: "nl",
-  New_Zealand: "nz",
+  'New Zealand': "nz",
   Nigeria: "ng",
   Norway: "no",
   Philippines: "ph",
@@ -40,13 +40,13 @@ export const Countries = {
   Portugal: "pt",
   Romania: "ro",
   Russia: "ru",
-  Saudi_Arabia: "sa",
+  'Saudi Arabia': "sa",
   Serbia: "rs",
   Singapore: "sg",
   Slovakia: "sk",
   Slovenia: "si",
-  South_Africa: "za",
-  South_Korea: "kr",
+  'South Africa': "za",
+  'South Korea': "kr",
   Sweden: "se",
   Switzerland: "ch",
   Taiwan: "tw",
@@ -54,15 +54,15 @@ export const Countries = {
   Turkey: "tr",
   UAE: "ae",
   Ukraine: "ua",
-  United_Kingdom: "gb",
-  United_States: "us",
+  'United Kingdom': "gb",
+  'United States': "us",
   Venuzuela: "ve",
 };
-export type CountriesOptions = "Argentina"| "Australia"| "Austria"| "Belgium"| "Brazil"| "Bulgaria"| "Canada"| "China"| "Colombia"| "Cuba"| "Czech_Republic"| "Egypt"| "France"| 
-                                "Germany"| "Greece"| "Hong_Kong"| "Hungary"| "India"| "Indonesia"| "Ireland"| "Israel"| "Italy"| "Japan"| "Latvia"| "Lithuania"| "Malaysia"| "Mexico"| 
-                                "Morocco"| "Netherlands"| "New_Zealand"| "Nigeria"| "Norway"| "Philippines"| "Poland"| "Portugal"| "Romania"| "Russia"| "Saudi_Arabia"| "Serbia"| 
-                                "Singapore"| "Slovakia"| "Slovenia"| "South_Africa"| "South_Korea"| "Sweden"| "Switzerland"| "Taiwan"| "Thailand"| "Turkey"| "UAE"| "Ukraine"| 
-                                "United_Kingdom"| "United_States"| "Venuzuela"; 
+export type CountriesOptions = "Argentina"| "Australia"| "Austria"| "Belgium"| "Brazil"| "Bulgaria"| "Canada"| "China"| "Colombia"| "Cuba"| "Czech Republic"| "Egypt"| "France"| 
+                                "Germany"| "Greece"| "Hong Kong"| "Hungary"| "India"| "Indonesia"| "Ireland"| "Israel"| "Italy"| "Japan"| "Latvia"| "Lithuania"| "Malaysia"| "Mexico"| 
+                                "Morocco"| "Netherlands"| "New Zealand"| "Nigeria"| "Norway"| "Philippines"| "Poland"| "Portugal"| "Romania"| "Russia"| "Saudi Arabia"| "Serbia"| 
+                                "Singapore"| "Slovakia"| "Slovenia"| "South Africa"| "South Korea"| "Sweden"| "Switzerland"| "Taiwan"| "Thailand"| "Turkey"| "UAE"| "Ukraine"| 
+                                "United Kingdom"| "United States"| "Venuzuela"; 
                                 
 export const Languages = {
   Amharic: "ar",
@@ -93,25 +93,24 @@ export const Category = {
 export type CategoriesOptions = "Busines"| "Entertainment"| "General"| "Health"| "Science"| "Sports"| "Technology";
 
 export const Sources = {
-    Android_Central: "Android Central",
-    Ars_Technica: "Ars Technica",
-    Business_Insider: "Business Insider",
+    'ABC News (AU)': "abc-news-au",
+    'ABC News': "abc-news",
+    'Ars Technica': "ars-technica",
     Engadget: "Engadget",
     Entrepreneur: "Entrepreneur",
-    Gizmodo_com: "Gizmodo.com",
+    'Financial Post': "financial-post",
     MacRumors: "MacRumors",
     MarketBeat: "MarketBeat",
-    New_York_Times: "New York Times",
+    'New York Magazine': "new-york-magazine",
     Reuters: "Reuters",
-    Slashdot_org: "Slashdot.org",
+    'Reddit': "reddit-r-all",
     TechCrunch: "TechCrunch",
-    The_Guardian: "The Guardian",
-    The_Next_Web: "The Next Web",
-    The_Verge: "The Verge",
+    'TechRadar': "techradar",
+    'The Hill': "the-hill",
     Wired: "Wired",
 };
-export type SourcesOptions = "Android_Central"| "Ars_Technica"| "Business_Insider"| "Engadget"| "Entrepreneur"| "Gizmodo_com"| "MacRumors"| "MarketBeat"| 
-                             "New_York_Times"| "Reuters"| "Slashdot_org"| "TechCrunch"| "The_Guardian"| "The_Next_Web"| "The_Verge"| "Wired";
+export type SourcesOptions = "ABC News (AU)"| "ABC News"| "Ars Technica"| "Engadget"| "Entrepreneur"| "Financial Post"| "MacRumors"| "MarketBeat"| 
+                             "New York Magazine"| "Reuters"| "Reddit"| "TechRadar"| "TechCrunch"| "The Hill"| "Wired";
 
 export const SortBy = {
   Relevancy: "relevancy",
@@ -123,3 +122,5 @@ export type SortByOptions = "Relevancy" | "Popularity"| "PublishedAt";
 export type EndpointsOptions = "Everything" | "Top Headlines" | "";
 
 export type  TitlesOptions = "Category" | "Country" | "Sources" | "SortBy" | "Language" | "Endpoint";
+
+export type Months = "January" | "February" | "March" | "April" | "May" | "June" | "July" | "August" | "September" | "October" | "November" | "December" ;

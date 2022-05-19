@@ -19,7 +19,7 @@ const DataContainer = () => {
     <DataCardContainer>
       <DataCard title={Titles.Source} type={DataCardType.Source}/>
       <DataCard title={Titles.Dates} type={DataCardType.Dates}/>
-      <DataCard title={Titles.Other} type={DataCardType.Other}/>
+      {/* <DataCard title={Titles.Other} type={DataCardType.Other}/> */}
     </DataCardContainer>
   );
 };

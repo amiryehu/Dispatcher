@@ -9,7 +9,6 @@ const btnText = "CLEAR";
 
 const RecentSearches = () => {
     const recentSearches = "RECENT SEARCHES";
-
     const recentSearch = ['amir', 'yehuda', 'ofek', 'amir', 'yehuda', 'ofek', 'amir', 'yehuda', 'ofek', 'amir', 'yehuda', 'ofek'];
 
     const onDeleteHandler = () => {
@@ -29,7 +28,6 @@ const RecentSearches = () => {
     }
 
     return (
-
         <RecentSearchesContainer>
             <RecentSearchesTitleAndBtn>
                  {recentSearches}
@@ -38,9 +36,7 @@ const RecentSearches = () => {
             
             <RdecentBody>
                 {showLastSearches()}
-            
             </RdecentBody>
-            
         </RecentSearchesContainer>
     );
 

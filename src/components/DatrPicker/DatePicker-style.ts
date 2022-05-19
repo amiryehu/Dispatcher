@@ -10,6 +10,10 @@ export const DatePickerWrapper = styled.div`
   border-radius: ${cardrRadius};
   background-color: ${colors.white};
   padding:0 9px;
+  :hover{
+    border: 1px solid ${colors.gray} ;
+  }
+  cursor: pointer;
 `
 
 export const DateStyle = createGlobalStyle`
@@ -24,6 +28,7 @@ export const DateStyle = createGlobalStyle`
       font-size: 1rem;
       font-weight: 400;
     }
+    cursor: pointer;
     height: 52px;
     border: 0px;
     font-size: 0.78rem;

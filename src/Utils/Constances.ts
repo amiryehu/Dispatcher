@@ -41,6 +41,7 @@ export const SeparatingLine = styled.div`
 `;
 
 export const screenSize = {
-  tablet: '770px',
+  // tablet: '770px',
+  tablet: '1100px',
   mobile: '375px'
 };

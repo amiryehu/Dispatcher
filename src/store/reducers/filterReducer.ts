@@ -6,12 +6,13 @@ export const initialState = {
   Category: "",
   Sources: "",
   SortBy: "",
-  Dates: "", //from - to? ["Date" , "Date"]
+  Dates: {from: "", to: ""},
   Language: "",
   Endpoint: "Top Headlines",
   countryName: "",
   valueInSearch: "",
   searchIsFocused: false,
+  totalResOrTopHedline: false
 };
 
 const filtersSlice = createSlice({
@@ -37,17 +38,23 @@ const filtersSlice = createSlice({
     setSortBy(state, action: PayloadAction<string>) {
       state.SortBy = action.payload;
     },
-    setDates(state, action: PayloadAction<string>) {
-      state.Dates = action.payload;
+    setDatesFrom(state, action: PayloadAction<string>) {
+      state.Dates.from = action.payload;
+    },
+    setDatesTo(state, action: PayloadAction<string>) {
+      state.Dates.to = action.payload;
     },
     setLanguage(state, action: PayloadAction<string>) {
       state.Language = action.payload;
     },
     setCountryName(state, action: PayloadAction<string>) {
-      state.countryName = action.payload;
+      state.countryName =  action.payload;
     },
     setIsSearchPressed(state, action: PayloadAction<string>) {
       state.valueInSearch = action.payload;
+    },
+    setTotalResOrTopHedline(state, action: PayloadAction<boolean>) {
+      state.totalResOrTopHedline = action.payload;
     },
   },
   extraReducers: {

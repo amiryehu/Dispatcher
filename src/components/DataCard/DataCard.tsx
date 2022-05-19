@@ -1,5 +1,6 @@
 import { type } from "os";
 import React from "react";
+import { TailSpin } from  'react-loader-spinner'
 import {
   DataCardContainer,
   DataCardHeader,
@@ -7,16 +8,20 @@ import {
   DataContent,
   dataContentStyle,
   chartImgStyle,
+  Loading,
+  NoDataCase
 } from "./DataCard-style";
 import chartImg from "../../assets/Icons/chart.svg";
 import LineGraph from "./LineGraph";
 import PieGraph from "./PieGraph";
 import Articles from "../../mockData/mockData.json";
-import { useAppSelector } from "../../store/store";
+import { RootState, useAppSelector } from "../../store/store";
+import { stat } from "fs";
+import { Endpoint } from "../../store/Utils/storeConstances";
 
 type IDataCard = {
-  title: string,
-  type: string,
+  title: string;
+  type: string;
 };
 
 enum types {
@@ -26,49 +31,42 @@ enum types {
 
 const DataCard = (props: IDataCard) => {
   const { title, type } = props;
-  const articles = useAppSelector(state=>state.apiArticlesResponse.articles)
-  
-  // arranged data
-  const a  = Articles.articles ;
-  let sumOfArticles = 0;
-  const sourceCounter: { [key: string]: number } = {};
-  const sortedSource: { name: string; value: number }[] = [];
+  const articles = useAppSelector((state) => state.apiArticlesResponse.articles);
+  const isLoading = useAppSelector((state) => state.apiArticlesResponse.isLoading);
+  const filtersState = useAppSelector((state: RootState) => state.filters);
 
-  for (const element of articles) {
-    if (sourceCounter[element.source.name]) {
-      sourceCounter[element.source.name] += 1;
-    } else {
-      sourceCounter[element.source.name] = 1;
-    }
-    sumOfArticles++;
-  }
-
-  for (const source in sourceCounter) {
-    sortedSource.push({ name: source, value: sourceCounter[source] });
-  }
-  sortedSource.sort(function (a, b) {
-    return b.value - a.value;
-  });
-  // end arranged data
-
+  //move to PieGraph and LineGraph?
   const rendeNoDataCase = () => {
     return (
-      <DataContent>
+      <NoDataCase>
         <img src={chartImg} style={{ ...chartImgStyle }} />
         <div style={{ ...dataContentStyle }}>No data to display</div>
-      </DataContent>
+      </NoDataCase>
+    );
+  };
+  const renderLoader = () => {
+    return (<Loading>
+        <TailSpin
+        height="50"
+        width="50"
+        color='grey'
+        ariaLabel='loading'
+      />
+      <text style={{fontFamily:'Mulidh', fontSize:'1.2rem'}}>Loading...</text>
+      </Loading>
     );
   };
 
   const returnGraphsOrNoDataCase = () => {
-    if(!sortedSource || sortedSource.length === 0)
-      return rendeNoDataCase()
+    if (filtersState.Endpoint == Endpoint.Everything && filtersState.valueInSearch === "")  return rendeNoDataCase();
+    if (isLoading ) return renderLoader();
+    if (!articles || articles.length === 0 ) return rendeNoDataCase();
 
     switch (type) {
       case types.Source:
-          return <PieGraph data={sortedSource} />;   
+        return <PieGraph />;
       case types.Dates:
-          return <LineGraph data={sortedSource} />; 
+        return <LineGraph />;
       default:
         return rendeNoDataCase();
     }

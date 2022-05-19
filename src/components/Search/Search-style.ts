@@ -12,15 +12,22 @@ export const SearchContainer = styled.div<IPaperWrapperProps>`
   justify-content: space-between;
   height: 57px;
   padding-left: 15px;
-  margin-left: 11%;
+  /* margin-left: 7%; */
+  margin-left: ${(props) => (props.isFocused ? "4.8%" : "7%")};
   border-radius: 10px;
   color: rgba(0, 0, 0, 0.87);
   background-color: ${colors.white};
   width: ${(props) => (props.isFocused ? "623px" : "423px")};
   transition-duration: 500ms;
-
+  position: relative;
+ 
+  @media screen and (max-width: 900px) {
+    width: ${(props) => (props.isFocused ? "520px" : "423px")};
+  }
+  
   @media screen and (max-width: ${screenSize.tablet}) {
     width: 300px;
+    margin-left: 12%;
   }
 `;
 
@@ -29,6 +36,7 @@ export const SearchWrapper = styled.div`
   width: 100%;
   align-items: center;
 `;
+
 
 export const searchIconStyle = {
   marginRight: "4px",
