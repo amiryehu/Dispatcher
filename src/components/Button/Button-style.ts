@@ -6,12 +6,17 @@ export const StyledButton = styled.button`
   height: 36px;
   border: none;
   border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
   &.primary {
     background: ${colors.blue};
     color: ${colors.white};
+    gap: 10px;
     &:hover {
       opacity: 80%;
+      cursor: pointer;
     }
   }
 
@@ -39,3 +44,8 @@ export const StyledButton = styled.button`
     color: ${colors.white};
   }
 `;
+
+
+// export const StyledIcon = styled.img`
+//   transform: rotate(20deg)
+// `

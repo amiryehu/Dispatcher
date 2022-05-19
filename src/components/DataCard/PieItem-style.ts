@@ -24,13 +24,18 @@ export const Circle = styled.div<ColorItemProps>`
 `;
 
 export const TitleAndMark = styled.div`
+  color: ${pieColors.black};
   display: flex;
   align-items: center;
   font-weight: 400;
+  font-family: 'Mulish';
+  font-size: 14px;
   gap: 1.4rem;
 `;
 
 export const Percentage = styled.div`
   color: ${pieColors.fadedGray};
   font-weight: 400;
+  font-family: 'Mulish';
+  font-size: 14px;
 `;

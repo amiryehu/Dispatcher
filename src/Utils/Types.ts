@@ -18,4 +18,6 @@ export interface APIresponse {
   articles: ICard[],
   status: string,
   totalResults: number,
+  currentPage:number
+  isLoading: boolean
 }

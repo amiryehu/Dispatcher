@@ -7,7 +7,9 @@ interface FilterWeapperProps{
 
 export const FilterWrapper = styled.div<FilterWeapperProps>`
   display: flex;
-  width: ${props => props.isEndpointFilter? '155px' : '175px'};
+  width: ${props => props.isEndpointFilter? '165px' : '175px'};
+  font-family: "Roboto";
+  font-size: 14px;
 `;
 
 export const boxStyle = {
@@ -26,6 +28,18 @@ export const selectStyle = {
   maxHeight: "300px",
   border: "0px",
   "&:hover .MuiOutlinedInput-notchedOutline": {
-    border: "0px",
+    border: `1px solid ${colors.gray}` ,
+  },
+  fontFamily: "Roboto",
+};
+
+export const selectStyleEndpoint = {
+  color: `${colors.darkGray}`,
+  borderRadius: `${cardrRadius}`,
+  maxHeight: "300px",
+  border: "0px",
+  fontFamily: "Roboto",
+  "&:hover .MuiOutlinedInput-notchedOutline": {
+    border: "0px" ,
   },
 };

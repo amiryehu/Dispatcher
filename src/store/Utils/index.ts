@@ -1,8 +1,15 @@
 import React from "react";
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
+import { useAppDispatch } from "../store";
+import { articlesActions } from "../../store/reducers/articlesReducer";
 
-const fetchFromApiErrorHandler = () => {
+
+
+
+const useFetchFromApiErrorHandler = () => {
+  const dispatch = useAppDispatch();
+  dispatch(articlesActions.setIsLoading(false));
   return console.log("return no data page");
 };
 
@@ -15,7 +22,21 @@ export const fetchFromApi = createAsyncThunk(
         return res.data;
       }
     } catch (err) {
-      fetchFromApiErrorHandler();
+      useFetchFromApiErrorHandler();
+    }
+  }
+);
+
+export const fetchFromApiScroll = createAsyncThunk(
+  "fetchFromApiScroll",
+  async (url: string) => {
+    try {
+      const res = await axios.get(url);
+      if (res.status) {
+        return res.data;
+      }
+    } catch (err) {
+      useFetchFromApiErrorHandler();
     }
   }
 );

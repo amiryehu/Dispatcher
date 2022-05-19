@@ -5,6 +5,7 @@ import {  CardWrapper,  CardImg,  ArticleHeader,  Tags,  ArticleBody,  ArticleCo
 import { formattingDate } from "../../Utils/DateConvert";
 import { ICard } from "../../Utils/Types";
 import { store } from "../../store/store";
+import noImage from "../../assets/Icons/noImage.jpg"
 
 
 interface Icard{
@@ -26,22 +27,22 @@ const Card = ({article}:Icard) => {
   return (
     <CardWrapper>
 
-      <CardImg src={urlToImage} />
+      <CardImg src={urlToImage?urlToImage:noImage} />
 
       <CardContent>
         <div>
           <ArticleHeader>
             {formattingDate(publishedAt)}
-            <Tags>#tags</Tags>
+            {/* <Tags>#tags</Tags> */}
           </ArticleHeader>
           <ArticleBody>
-            <ArticleContent className="title">{title}</ArticleContent>
-            <ArticleContent className="name">{name}</ArticleContent>
-            <ArticleContent className="description">{description}</ArticleContent>
+            <ArticleContent className="title">{title && title}{""}</ArticleContent>
+            <ArticleContent className="name">{name && name}{""}</ArticleContent>
+            <ArticleContent className="description">{description && description}{""}</ArticleContent>
           </ArticleBody>
         </div>
         <ButtonContainer>
-          <Button className={buttonType.primary} btnText={btnText} onClick={openArticleInNewTab}></Button>
+          <Button className={buttonType.primary} btnText={btnText} onClick={openArticleInNewTab} arrowIconIsShow={true}></Button>
         </ButtonContainer>
       </CardContent>
 

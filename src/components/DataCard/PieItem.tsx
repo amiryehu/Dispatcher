@@ -7,6 +7,9 @@ interface IPieItem {
   percentage: number;
 }
 
+function capitalizeFirstLetter(string:string) {
+  return string.charAt(0).toUpperCase() + string.slice(1);
+}
 
 
 const PieItem = (props: IPieItem) => {
@@ -16,9 +19,9 @@ const PieItem = (props: IPieItem) => {
     <PieItemStyle>
       <TitleAndMark>
         <Circle color={itemColor} />
-        {title}
+        {capitalizeFirstLetter(title)}
       </TitleAndMark>
-      <Percentage>{`${percentage}%`}</Percentage>
+      <Percentage>{`${Math.floor(percentage)}%`}</Percentage>
     </PieItemStyle>
   );
 };
